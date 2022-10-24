@@ -1,8 +1,24 @@
-@import "https://fonts.googleapis.com/css?family=Syne";
+@import 'https://fonts.googleapis.com/css?family=Space Grotesk';
 body {
   margin: 0;
   display: flex;
   flex-flow: column nowrap;
+  font-family: "Space Grotesk";
+  font-style: normal;
+}
+body a {
+  display: grid;
+  place-items: center;
+  gap: 1em;
+  border: 2px solid #FFFFFF;
+  border-radius: 100vw;
+  padding: 10px 15px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+body a > img {
+  width: 30px;
 }
 body header {
   background-color: #000;
@@ -86,4 +102,75 @@ body main #grid #vota-uhendust {
 }
 body main #grid #meie-teema {
   grid-area: f;
+  padding: 5vw;
+  background-color: #122949;
+  border: 2.5px solid #000000;
+}
+@-webkit-keyframes scrolling-left1 {
+  0% {
+    transform: translateX(120%);
+    -webkit-transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(-250%);
+    -webkit-transform: translateX(-250%);
+  }
+}
+@keyframes scrolling-left1 {
+  0% {
+    transform: translateX(120%);
+    -webkit-transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(-250%);
+    -webkit-transform: translateX(-250%);
+  }
+}
+body main #grid #meie-teema span {
+  background-color: #000;
+  border-radius: 100vw;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 20vw;
+}
+body main #grid #meie-teema span:hover {
+  background-color: #3188FF;
+}
+body main #grid #meie-teema :nth-child(1) {
+  justify-content: left;
+  align-self: flex-start;
+}
+body main #grid #meie-teema :nth-child(2) {
+  justify-content: right;
+  align-content: end;
+}
+body main #grid #meie-teema span > h2 {
+  -webkit-animation: scrolling-left1 10s linear infinite;
+          animation: scrolling-left1 10s linear infinite;
+}
+body main #grid #meie-teema :nth-child(odd) {
+  text-align: left;
+}
+body main #grid #meie-teema :nth-child(even) {
+  text-align: right;
+}
+body main #grid #meie-teema div > h2 {
+  color: #98C4FF;
+}
+body .flex {
+  display: flex !important;
+  flex-flow: row nowrap;
+}
+body .flex-col {
+  display: flex !important;
+  flex-flow: column nowrap;
+}
+body footer {
+  background-color: #000;
+  color: #fff;
+  padding: 2em;
+  justify-content: space-between;
+}
+body footer > img {
+  width: 40px;
 }/*# sourceMappingURL=style.css.map */

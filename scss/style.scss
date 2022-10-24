@@ -1,8 +1,22 @@
-@import "https://fonts.googleapis.com/css?family=Syne";
+@import 'https://fonts.googleapis.com/css?family=Space Grotesk';
 body {
   margin: 0;
   display: flex;
   flex-flow: column nowrap;
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  a {
+    display: grid;
+    place-items: center;
+    gap: 1em;
+    border: 2px solid #FFFFFF;
+    border-radius: 100vw;
+    padding: 10px 15px;
+    width: max-content;
+    > img { 
+    width: 30px;
+    }
+  } 
   header {
     background-color: #000;
     display: grid;
@@ -35,12 +49,7 @@ body {
     }
     #grid {
       display: grid;
-      grid-template-areas: "a a a a a b b b"
-                           "a a a a a c c c"
-                           "d d d d e c c c"
-                           "f f f f f f f f"
-                           "f f f f f f f f"
-                           "f f f f f f f f";
+      grid-template-areas: "a a a a a b b b" "a a a a a c c c" "d d d d e c c c" "f f f f f f f f" "f f f f f f f f" "f f f f f f f f";
       width: 100%;
       > div {
         display: grid;
@@ -91,8 +100,63 @@ body {
       }
       #meie-teema {
         grid-area: f;
+        padding: 5vw;
+        background-color: #122949;
+        border: 2.5px solid #000000;
+        @keyframes scrolling-left1 {
+          0% {
+            transform: translateX(120%);
+            -webkit-transform: translateX(120%);}
+          100% {
+            transform: translateX(-250%);
+            -webkit-transform: translateX(-250%);}
+        }
+        span {
+          background-color: #000;
+          border-radius: 100vw;
+          white-space: nowrap; 
+          overflow: hidden; 
+          width: 20vw;
+        }
+        span:hover {
+          background-color: #3188FF;
+        }
+        :nth-child(1) {
+          justify-content: left;
+          align-self: flex-start;
+        }
+        :nth-child(2) {
+          justify-content: right;
+          align-content: end;
+        }
+        span > h2 { animation: scrolling-left1 10s linear infinite; }
+        :nth-child(odd) { text-align: left; }
+        :nth-child(even) { text-align: right; }
+        div > h2 { 
+          color: #98C4FF;
+        }
       }
+      
+
+
     }
   }
+  .flex {
+    display: flex !important;
+    flex-flow: row nowrap;
+  }
+  .flex-col {
+    display: flex !important;
+    flex-flow: column nowrap;
+  }
+  footer {
+    background-color: #000;
+    color: #fff;
+    padding: 2em;
+    justify-content: space-between;
+    > img {
+      width: 40px;
+    }
 
+  }
 }
