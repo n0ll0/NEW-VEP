@@ -1,0 +1,32 @@
+@import "https://fonts.googleapis.com/css?family=Syne";
+body {
+  margin: 0;
+  display: flex;
+  flex-flow: column nowrap;
+}
+body header {
+  background-color: #000;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  color: #fff;
+}
+body header img {
+  width: 39.375vw;
+}
+body main {
+  background-color: #609CEB;
+}
+body main h2 {
+  font-size: 4vw;
+}
+body main .black {
+  background-color: #000;
+  padding: 3.5vw;
+}
+body main .BR {
+  border-radius: 0 0 10vw 10vw;
+}
+body main .UR {
+  border-radius: 10vw 10vw 0 0;
+}/*# sourceMappingURL=style.css.map */
