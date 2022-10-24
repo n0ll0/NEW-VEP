@@ -30,6 +30,69 @@ body {
     .UR {
       border-radius: $R $R 0 0;
     }
+    .background {
+      opacity: 0.5;
+    }
+    #grid {
+      display: grid;
+      grid-template-areas: "a a a a a b b b"
+                           "a a a a a c c c"
+                           "d d d d e c c c"
+                           "f f f f f f f f"
+                           "f f f f f f f f"
+                           "f f f f f f f f";
+      width: 100%;
+      > div {
+        display: grid;
+        place-items: center;
+        border-radius: 3.125vw;
+      }
+      #telli-leht {
+        grid-area: a;
+        background-color: #006CFF;
+        border: 2.5px solid #000000;
+
+        > div {
+          display: flex;
+          flex-flow: row nowrap;
+          gap: 0.5vw;
+           > div {
+            border-radius: 100vw;
+            width: 3vw;
+            img {
+              width: 100%;
+              aspect-ratio: 1;
+            }
+          }
+        }
+      }
+      #Meist {
+        grid-area: b;
+        background-color: #3188FF;
+        ul {
+          display: flex;
+          flex-flow: row nowrap;
+          gap: 2vw;
+          .dots {
+            background-color: #D3E6FF;
+          }
+        }
+      }
+      #TALTECH {
+        grid-area: d;
+        background-color: #003F94;
+        border: 2.5px solid #000000;
+      }
+      #arrow {
+        grid-area: e;
+      }
+      #vota-uhendust {
+        grid-area: c;
+      }
+      #meie-teema {
+        grid-area: f;
+      }
+    }
   }
 
 }

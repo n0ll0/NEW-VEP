@@ -29,4 +29,61 @@ body main .BR {
 }
 body main .UR {
   border-radius: 10vw 10vw 0 0;
+}
+body main .background {
+  opacity: 0.5;
+}
+body main #grid {
+  display: grid;
+  grid-template-areas: "a a a a a b b b" "a a a a a c c c" "d d d d e c c c" "f f f f f f f f" "f f f f f f f f" "f f f f f f f f";
+  width: 100%;
+}
+body main #grid > div {
+  display: grid;
+  place-items: center;
+  border-radius: 3.125vw;
+}
+body main #grid #telli-leht {
+  grid-area: a;
+  background-color: #006CFF;
+  border: 2.5px solid #000000;
+}
+body main #grid #telli-leht > div {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.5vw;
+}
+body main #grid #telli-leht > div > div {
+  border-radius: 100vw;
+  width: 3vw;
+}
+body main #grid #telli-leht > div > div img {
+  width: 100%;
+  aspect-ratio: 1;
+}
+body main #grid #Meist {
+  grid-area: b;
+  background-color: #3188FF;
+}
+body main #grid #Meist ul {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 2vw;
+}
+body main #grid #Meist ul .dots {
+  background-color: #D3E6FF;
+}
+body main #grid #TALTECH {
+  grid-area: d;
+  background-color: #003F94;
+  border: 2.5px solid #000000;
+}
+body main #grid #arrow {
+  grid-area: e;
+}
+body main #grid #vota-uhendust {
+  grid-area: c;
+}
+body main #grid #meie-teema {
+  grid-area: f;
 }/*# sourceMappingURL=style.css.map */
