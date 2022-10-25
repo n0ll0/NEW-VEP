@@ -6,11 +6,12 @@ body {
   font-family: "Space Grotesk";
   font-style: normal;
 }
-body a {
+
+a {
   text-decoration: none;
   color: #fff;
 }
-body a.normal {
+a.normal {
   display: grid;
   place-items: center;
   gap: 1em;
@@ -22,77 +23,81 @@ body a.normal {
   width: -moz-max-content;
   width: max-content;
 }
-body a.normal > img {
+a.normal > img {
   width: 30px;
 }
-body header {
+
+header {
   background-color: #000;
   display: grid;
   place-items: center;
   margin: 0;
   color: #fff;
 }
-body header img {
+header img {
   width: 39.375vw;
 }
-body main {
+
+main {
   background-color: #609CEB;
 }
-body main h2 {
+main h2 {
   font-size: 4vw;
 }
-body main .black {
+main .black {
   background-color: #000;
   padding: 3.5vw;
 }
-body main .BR {
+main .BR {
   border-radius: 0 0 10vw 10vw;
 }
-body main .UR {
+main .UR {
   border-radius: 10vw 10vw 0 0;
 }
-body main .background {
+main .background {
   opacity: 0.5;
 }
-body main #grid {
+main #grid {
   display: grid;
   grid-template-areas: "a a a a a b b b" "a a a a a c c c" "d d d d e c c c" "f f f f f f f f" "f f f f f f f f" "f f f f f f f f";
   width: 100%;
 }
-body main #grid > div {
+main #grid > div {
   display: grid;
   place-items: center;
   border-radius: 3.125vw;
 }
-body main #grid #telli-leht {
+main #grid #telli-leht {
   grid-area: a;
   background-color: #006CFF;
   border: 2.5px solid #000000;
 }
-body main #grid #telli-leht > div {
+main #grid #telli-leht > div {
   display: flex;
   flex-flow: row nowrap;
   gap: 0.5vw;
+  padding: 2px;
 }
-body main #grid #telli-leht > div > div {
+main #grid #telli-leht > div > div {
   border-radius: 100vw;
   width: 3vw;
 }
-body main #grid #telli-leht > div > div img {
+main #grid #telli-leht > div > div img {
   width: 100%;
   aspect-ratio: 1;
+  z-index: 2;
 }
-body main #grid #Meist {
+main #grid #Meist {
   grid-area: b;
   background-color: #3188FF;
   color: #D3E6FF;
 }
-body main #grid #Meist ul {
+main #grid #Meist ul {
   display: flex;
   flex-flow: row nowrap;
   gap: 2vw;
 }
-body main #grid #TALTECH {
+main #grid #TALTECH {
   grid-area: d;
   background-color: #003F94;
   border: 2.5px solid #000000;
@@ -101,10 +106,10 @@ body main #grid #TALTECH {
   padding: auto auto;
   overflow: hidden;
 }
-body main #grid #TALTECH h2 {
+main #grid #TALTECH h2 {
   font-size: 2vw;
 }
-body main #grid #TALTECH .background {
+main #grid #TALTECH .background {
   position: absolute;
   right: 0;
   bottom: auto;
@@ -113,26 +118,26 @@ body main #grid #TALTECH .background {
   opacity: 0;
   transition: opacity 0.3s linear 0s;
 }
-body main #grid #TALTECH:hover .background {
+main #grid #TALTECH:hover .background {
   opacity: 0.3;
 }
-body main #grid #arrow {
+main #grid #arrow {
   grid-area: e;
   border-radius: 100vw;
   overflow: hidden;
   aspect-ratio: 1;
   background-color: #98C4FF;
 }
-body main #grid #arrow h2 {
+main #grid #arrow h2 {
   transform: translateY(-10px);
   text-align: center;
   padding: auto;
   transition: transform 0.5s ease-in-out 0s;
 }
-body main #grid #arrow:hover h2 {
+main #grid #arrow:hover h2 {
   transform: translateY(30%);
 }
-body main #grid #vota-uhendust {
+main #grid #vota-uhendust {
   width: 3fr;
   grid-area: c;
   display: grid;
@@ -142,10 +147,10 @@ body main #grid #vota-uhendust {
   padding: auto auto;
   gap: -2em;
 }
-body main #grid #vota-uhendust h2 {
+main #grid #vota-uhendust h2 {
   font-size: 2.625vw;
 }
-body main #grid #meie-teema {
+main #grid #meie-teema {
   grid-area: f;
   padding: 5vw;
   background-color: #122949;
@@ -157,8 +162,8 @@ body main #grid #meie-teema {
     -webkit-transform: translateX(100%);
   }
   100% {
-    transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
+    transform: translateX(-120%);
+    -webkit-transform: translateX(-120%);
   }
 }
 @keyframes scrolling-left1 {
@@ -167,26 +172,26 @@ body main #grid #meie-teema {
     -webkit-transform: translateX(100%);
   }
   100% {
-    transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
+    transform: translateX(-120%);
+    -webkit-transform: translateX(-120%);
   }
 }
-body main #grid #meie-teema > div {
+main #grid #meie-teema > div {
   justify-content: space-between;
   align-content: space-between;
 }
-body main #grid #meie-teema > :nth-child(1) {
+main #grid #meie-teema > :nth-child(1) {
   height: 100%;
   width: 40%;
   text-align: left;
   align-items: flex-start;
 }
-body main #grid #meie-teema > :nth-child(2) {
+main #grid #meie-teema > :nth-child(2) {
   align-items: end;
   height: 100%;
   text-align: right;
 }
-body main #grid #meie-teema span {
+main #grid #meie-teema span {
   background-color: #000;
   border-radius: 100vw;
   white-space: nowrap;
@@ -198,47 +203,47 @@ body main #grid #meie-teema span {
   height: -moz-max-content !important;
   height: max-content !important;
 }
-body main #grid #meie-teema span h2 {
+main #grid #meie-teema span h2 {
   font-size: 2.25vw;
   margin: 0;
 }
-body main #grid #meie-teema span:hover {
+main #grid #meie-teema span:hover {
   background-color: #3188FF;
 }
-body main #grid #meie-teema span > h2 {
+main #grid #meie-teema span > h2 {
   -webkit-animation: scrolling-left1 5s linear infinite;
           animation: scrolling-left1 5s linear infinite;
 }
-body main #grid #meie-teema div > h2 {
+main #grid #meie-teema div > h2 {
   color: #98C4FF;
 }
-body main #grid #meie-teema div > h2 b {
+main #grid #meie-teema div > h2 b {
   opacity: 1 !important;
   color: #006CFF;
   transition: none !important;
 }
-body main #grid #meie-teema div > h2 b:hover {
+main #grid #meie-teema div > h2 b:hover {
   opacity: 1 !important;
 }
-body main #meiemeeskond img {
+main #meiemeeskond img {
   width: 56.875vw;
   height: auto;
 }
-body main b {
+main b {
   opacity: 0.001;
   transition: opacity 0.5s linear 0s;
 }
-body main b:hover {
+main b:hover {
   opacity: 1;
 }
-body main .article {
+main .article {
   display: grid;
   width: 80%;
   color: #fff;
   -moz-column-gap: 2em;
        column-gap: 2em;
 }
-body main .article > :nth-child(1) {
+main .article > :nth-child(1) {
   grid-area: i;
   border-radius: 32px;
   background-color: #006CFF;
@@ -247,128 +252,154 @@ body main .article > :nth-child(1) {
   height: 14.0625vw;
   place-self: center;
 }
-body main .article > :nth-child(1) b > img {
-  width: 33%;
-}
-body main .article > :nth-child(2) {
+main .article > :nth-child(2) {
   grid-area: h;
 }
-body main .article > :nth-child(3) {
+main .article > :nth-child(3) {
   grid-area: p;
 }
-body main .article > :nth-child(2), body main .article :nth-child(3) {
+main .article > :nth-child(2), main .article :nth-child(3) {
   padding: 0;
 }
-body main .article #unik, body main .article #rahv {
+main .article #unik, main .article #rahv {
   padding: auto;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-body main .article #rahv {
+main .article #rahv {
   font-size: 1.5vw;
 }
-body main .article img {
+main .article #rahv b {
+  aspect-ratio: 1;
+  width: 33%;
+}
+main .article #rahv b img {
+  width: 100%;
+}
+main .article img {
   width: 100%;
   border-radius: 32px;
 }
-body main .article #hoverIMG {
-  background-image: url("src/SOE.svg");
+main .article #hoverIMG {
+  background: url("../src/SEO.svg") no-repeat content-box center;
+  -o-object-fit: fill;
+     object-fit: fill;
+  background-size: auto;
 }
-body main .article #hoverIMG:hover {
-  background-image: url("src/100.svg");
+main .article #hoverIMG:hover {
+  background: url("../src/s100.svg") no-repeat content-box center;
+  background-size: auto;
+  -o-object-fit: fill;
+     object-fit: fill;
 }
-body main .article b {
+main .article b {
   opacity: 1;
 }
-body main .article b:hover {
+main .article b:hover {
   opacity: 0.001;
 }
-body main .article:nth-child(even) {
+main .article:nth-child(even) {
   grid-template-areas: "h i" "p i";
 }
-body main .article:nth-child(odd) {
+main .article:nth-child(odd) {
   grid-template-areas: "i h" "i p";
 }
-body main #Meisterlik {
+main #Meisterlik {
   grid-template-areas: "h i" "p i";
   width: 80%;
   margin: 1em auto;
 }
-body main #Meisterlik h2, body main #Meisterlik p {
+main #Meisterlik h2, main #Meisterlik p {
   color: #003F94;
 }
-body main #Meisterlik img {
+main #Meisterlik :nth-child(1) {
+  background: none;
+}
+main #Meisterlik img {
   width: 100%;
 }
-body .center {
+
+.center {
   color: #fff;
   text-align: center;
+  width: 100%;
 }
-body .center h2 {
+.center h2 {
   width: 60%;
 }
-body form .grid {
+
+form {
+  width: 100%;
+}
+form .grid {
   grid-template-areas: "n e s" "m m s";
   gap: 2.5px;
 }
-body form .grid :nth-child(1) {
+form .grid :nth-child(1) {
   grid-area: n;
 }
-body form .grid :nth-child(2) {
+form .grid :nth-child(2) {
   grid-area: e;
 }
-body form .grid :nth-child(3) {
+form .grid :nth-child(3) {
   grid-area: m;
-  min-height: 6em;
 }
-body form .grid :nth-child(4) {
+form .grid :nth-child(4) {
   grid-area: s;
   background-color: #98C4FF;
   color: #122949;
 }
-body form .grid input {
+form .grid input, form .grid textarea {
   padding: 1em;
   border-radius: 1em;
   background-color: #122949;
   border: 0.2vw solid #000000;
   font-weight: bold;
   font-size: 1.2em;
+  color: #98C4FF;
 }
-body form .grid ::-moz-placeholder {
+form .grid textarea {
+  resize: vertical;
+}
+form .grid ::-moz-placeholder {
   color: #98C4FF;
   font-size: 1.2em;
   font-weight: bold;
 }
-body form .grid :-ms-input-placeholder {
+form .grid :-ms-input-placeholder {
   color: #98C4FF;
   font-size: 1.2em;
   font-weight: bold;
 }
-body form .grid ::placeholder {
+form .grid ::placeholder {
   color: #98C4FF;
   font-size: 1.2em;
   font-weight: bold;
 }
-body .flex {
+
+.flex {
   display: flex !important;
   flex-flow: row nowrap;
 }
-body .flex-col {
+
+.flex-col {
   display: flex !important;
   flex-flow: column nowrap;
   align-items: center;
 }
-body .grid {
+
+.grid {
   display: grid;
 }
-body footer {
+
+footer {
   background-color: #000;
   color: #fff;
   padding: 2em;
   justify-content: space-between;
   align-items: center;
 }
-body footer > img {
+footer > img {
   width: 40px;
 }/*# sourceMappingURL=style.css.map */
