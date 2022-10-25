@@ -93,12 +93,36 @@ body main #grid #TALTECH {
   grid-area: d;
   background-color: #003F94;
   border: 2.5px solid #000000;
+  position: relative;
+  color: #98C4FF;
+  padding: auto auto;
+  overflow: hidden;
+}
+body main #grid #TALTECH h2 {
+  font-size: 2vw;
+}
+body main #grid #TALTECH .background {
+  position: absolute;
+  right: -3.125vw;
+  bottom: -3.125vw;
+  width: 45%;
+  margin: 0;
 }
 body main #grid #arrow {
   grid-area: e;
+  width: 100%;
 }
 body main #grid #vota-uhendust {
   grid-area: c;
+  display: grid;
+  place-items: center;
+  color: #003F94;
+  background-color: #609CEB;
+  padding: auto auto;
+  gap: -2em;
+}
+body main #grid #vota-uhendust h2 {
+  font-size: 2.625vw;
 }
 body main #grid #meie-teema {
   grid-area: f;
@@ -108,23 +132,37 @@ body main #grid #meie-teema {
 }
 @-webkit-keyframes scrolling-left1 {
   0% {
-    transform: translateX(120%);
-    -webkit-transform: translateX(120%);
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
   }
   100% {
-    transform: translateX(-250%);
-    -webkit-transform: translateX(-250%);
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
   }
 }
 @keyframes scrolling-left1 {
   0% {
-    transform: translateX(120%);
-    -webkit-transform: translateX(120%);
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
   }
   100% {
-    transform: translateX(-250%);
-    -webkit-transform: translateX(-250%);
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
   }
+}
+body main #grid #meie-teema > :nth-child(1) {
+  justify-content: left;
+  align-content: space-between;
+  height: 100%;
+  width: 40%;
+  text-align: left;
+}
+body main #grid #meie-teema > :nth-child(2) {
+  justify-content: space-between;
+  align-items: end;
+  align-content: space-between;
+  height: 100%;
+  text-align: right;
 }
 body main #grid #meie-teema span {
   background-color: #000;
@@ -132,30 +170,42 @@ body main #grid #meie-teema span {
   white-space: nowrap;
   overflow: hidden;
   width: 20vw;
+  height: -webkit-max-content !important;
+  height: -moz-max-content !important;
+  height: max-content !important;
 }
 body main #grid #meie-teema span:hover {
   background-color: #3188FF;
-}
-body main #grid #meie-teema :nth-child(1) {
-  justify-content: left;
-  align-self: flex-start;
-}
-body main #grid #meie-teema :nth-child(2) {
-  justify-content: right;
-  align-content: end;
 }
 body main #grid #meie-teema span > h2 {
   -webkit-animation: scrolling-left1 10s linear infinite;
           animation: scrolling-left1 10s linear infinite;
 }
-body main #grid #meie-teema :nth-child(odd) {
-  text-align: left;
-}
-body main #grid #meie-teema :nth-child(even) {
-  text-align: right;
-}
 body main #grid #meie-teema div > h2 {
   color: #98C4FF;
+}
+body main .article {
+  justify-content: center;
+  align-items: center;
+  color: #98C4FF;
+}
+body main .article .varvilineloik {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  padding: 5vw;
+  gap: 0.2em;
+  line-height: 1;
+}
+body main .article .varvilineloik b {
+  transition: opacity 0.3s linear 0s;
+  font-size: 1.1em;
+}
+body main .article .varvilineloik b:hover {
+  opacity: 0;
+}
+body main .article > .flex-col {
+  width: 40vw;
 }
 body .flex {
   display: flex !important;
