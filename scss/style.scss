@@ -38,7 +38,7 @@ body {
       font-size: 4vw;
     }
     $R: 10vw;
-    $r: 1.875;
+    $r: 1.875vw;
     .black {
       background-color: #000;
       padding: 3.5vw;
@@ -54,7 +54,7 @@ body {
     }
     #grid {
       display: grid;
-      grid-template-areas: "a a a a a b b b" "a a a a a b b b" "a a a a a c c c" "d d d d e c c c" "f f f f f f f f" "f f f f f f f f" "f f f f f f f f";
+      grid-template-areas: "a a a a a b b b" "a a a a a c c c" "d d d d e c c c" "f f f f f f f f" "f f f f f f f f" "f f f f f f f f";
       width: 100%;
 
       > div {
@@ -283,6 +283,14 @@ body {
     }
     
   }
+  .center {
+    color: #fff;
+    text-align: center;
+
+    h2 {
+      width: 60%;
+    }
+  }
   form .grid {
     grid-template-areas: "n e s" "m m s";
     :nth-child(1){
@@ -293,9 +301,30 @@ body {
     }
     :nth-child(3){
       grid-area: m;
+      min-height: 6em;
     }
     :nth-child(4){
       grid-area: s;
+      background-color: #98C4FF;
+      color: #122949; 
+
+    }
+    gap: 2.5px;
+
+    input {
+      padding: 1em;
+      border-radius: 1em;
+      background-color: #122949;
+      border: 0.2vw solid #000000;
+      font-weight: bold;
+      font-size: 1.2em;
+      
+    }
+    ::placeholder {
+      color: #98C4FF;
+      font-size: 1.2em;
+      font-weight: bold;
+
     }
   }
   .flex {
@@ -315,6 +344,7 @@ body {
     color: #fff;
     padding: 2em;
     justify-content: space-between;
+    align-items: center;
     > img {
       width: 40px;
     }
