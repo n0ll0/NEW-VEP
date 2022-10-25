@@ -1,3 +1,4 @@
 # NEW-VEP
-npm install sass
-npm install express
+composer require mongodb/mongodb
+\n
+composer require vlucas/phpdotenv
