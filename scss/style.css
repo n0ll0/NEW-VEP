@@ -56,7 +56,7 @@ body main .background {
 }
 body main #grid {
   display: grid;
-  grid-template-areas: "a a a a a b b b" "a a a a a c c c" "d d d d e c c c" "f f f f f f f f" "f f f f f f f f" "f f f f f f f f";
+  grid-template-areas: "a a a a a b b b" "a a a a a b b b" "a a a a a c c c" "d d d d e c c c" "f f f f f f f f" "f f f f f f f f" "f f f f f f f f";
   width: 100%;
 }
 body main #grid > div {
@@ -85,14 +85,12 @@ body main #grid #telli-leht > div > div img {
 body main #grid #Meist {
   grid-area: b;
   background-color: #3188FF;
+  color: #D3E6FF;
 }
 body main #grid #Meist ul {
   display: flex;
   flex-flow: row nowrap;
   gap: 2vw;
-}
-body main #grid #Meist ul .dots {
-  background-color: #D3E6FF;
 }
 body main #grid #TALTECH {
   grid-area: d;
@@ -108,17 +106,31 @@ body main #grid #TALTECH h2 {
 }
 body main #grid #TALTECH .background {
   position: absolute;
-  right: -3.125vw;
-  bottom: -3.125vw;
-  width: 50%;
+  right: 0;
+  bottom: auto;
+  width: 60%;
   margin: 0;
+  opacity: 0;
+  transition: opacity 0.3s linear 0s;
+}
+body main #grid #TALTECH:hover .background {
+  opacity: 0.3;
 }
 body main #grid #arrow {
   grid-area: e;
+  border-radius: 100vw;
+  overflow: hidden;
   aspect-ratio: 1;
+  background-color: #98C4FF;
 }
-body main #grid #arrow img {
-  width: 100%;
+body main #grid #arrow h2 {
+  transform: translateY(-10px);
+  text-align: center;
+  padding: auto;
+  transition: transform 0.5s ease-in-out 0s;
+}
+body main #grid #arrow:hover h2 {
+  transform: translateY(30%);
 }
 body main #grid #vota-uhendust {
   width: 3fr;
@@ -167,6 +179,7 @@ body main #grid #meie-teema > :nth-child(1) {
   height: 100%;
   width: 40%;
   text-align: left;
+  align-items: flex-start;
 }
 body main #grid #meie-teema > :nth-child(2) {
   align-items: end;
@@ -179,12 +192,15 @@ body main #grid #meie-teema span {
   white-space: nowrap;
   overflow: hidden;
   width: 20vw;
+  padding: 0.5em 1em;
+  margin: 0;
   height: -webkit-max-content !important;
   height: -moz-max-content !important;
   height: max-content !important;
 }
 body main #grid #meie-teema span h2 {
   font-size: 2.25vw;
+  margin: 0;
 }
 body main #grid #meie-teema span:hover {
   background-color: #3188FF;
@@ -196,20 +212,77 @@ body main #grid #meie-teema span > h2 {
 body main #grid #meie-teema div > h2 {
   color: #98C4FF;
 }
+body main #grid #meie-teema div > h2 b {
+  opacity: 1 !important;
+  color: #006CFF;
+  transition: none !important;
+}
+body main #grid #meie-teema div > h2 b:hover {
+  opacity: 1 !important;
+}
+body main #meiemeeskond img {
+  width: 56.875vw;
+  height: auto;
+}
+body main b {
+  opacity: 0.001;
+  transition: opacity 0.5s linear 0s;
+}
+body main b:hover {
+  opacity: 1;
+}
 body main .article {
   display: grid;
   width: 80%;
-  place-items: center;
-  color: #006CFF;
+  color: #fff;
+  -moz-column-gap: 2em;
+       column-gap: 2em;
 }
-body main .article :nth-child(1) {
+body main .article > :nth-child(1) {
   grid-area: i;
+  border-radius: 32px;
+  background-color: #006CFF;
+  color: #fff;
+  width: 20.75vw;
+  height: 14.0625vw;
+  place-self: center;
 }
-body main .article :nth-child(2) {
+body main .article > :nth-child(1) b > img {
+  width: 33%;
+}
+body main .article > :nth-child(2) {
   grid-area: h;
 }
-body main .article :nth-child(3) {
+body main .article > :nth-child(3) {
   grid-area: p;
+}
+body main .article > :nth-child(2), body main .article :nth-child(3) {
+  padding: 0;
+}
+body main .article #unik, body main .article #rahv {
+  padding: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+body main .article #rahv {
+  font-size: 1.5vw;
+}
+body main .article img {
+  width: 100%;
+  border-radius: 32px;
+}
+body main .article #hoverIMG {
+  background-image: url("src/SOE.svg");
+}
+body main .article #hoverIMG:hover {
+  background-image: url("src/100.svg");
+}
+body main .article b {
+  opacity: 1;
+}
+body main .article b:hover {
+  opacity: 0.001;
 }
 body main .article:nth-child(even) {
   grid-template-areas: "h i" "p i";
