@@ -7,17 +7,22 @@ body {
   font-style: normal;
 }
 body a {
+  text-decoration: none;
+  color: #fff;
+}
+body a.normal {
   display: grid;
   place-items: center;
   gap: 1em;
   border: 2px solid #FFFFFF;
   border-radius: 100vw;
-  padding: 10px 15px;
+  height: 100%;
+  padding: 0.2em 1em;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
-body a > img {
+body a.normal > img {
   width: 30px;
 }
 body header {
@@ -105,14 +110,18 @@ body main #grid #TALTECH .background {
   position: absolute;
   right: -3.125vw;
   bottom: -3.125vw;
-  width: 45%;
+  width: 50%;
   margin: 0;
 }
 body main #grid #arrow {
   grid-area: e;
+  aspect-ratio: 1;
+}
+body main #grid #arrow img {
   width: 100%;
 }
 body main #grid #vota-uhendust {
+  width: 3fr;
   grid-area: c;
   display: grid;
   place-items: center;
@@ -150,17 +159,17 @@ body main #grid #meie-teema {
     -webkit-transform: translateX(-100%);
   }
 }
-body main #grid #meie-teema > :nth-child(1) {
-  justify-content: left;
+body main #grid #meie-teema > div {
+  justify-content: space-between;
   align-content: space-between;
+}
+body main #grid #meie-teema > :nth-child(1) {
   height: 100%;
   width: 40%;
   text-align: left;
 }
 body main #grid #meie-teema > :nth-child(2) {
-  justify-content: space-between;
   align-items: end;
-  align-content: space-between;
   height: 100%;
   text-align: right;
 }
@@ -178,8 +187,8 @@ body main #grid #meie-teema span:hover {
   background-color: #3188FF;
 }
 body main #grid #meie-teema span > h2 {
-  -webkit-animation: scrolling-left1 10s linear infinite;
-          animation: scrolling-left1 10s linear infinite;
+  -webkit-animation: scrolling-left1 5s linear infinite;
+          animation: scrolling-left1 5s linear infinite;
 }
 body main #grid #meie-teema div > h2 {
   color: #98C4FF;

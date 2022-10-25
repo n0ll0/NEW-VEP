@@ -6,12 +6,17 @@ body {
   font-family: 'Space Grotesk';
   font-style: normal;
   a {
+    text-decoration: none;
+    color: #fff;
+  }
+  a.normal {
     display: grid;
     place-items: center;
     gap: 1em;
     border: 2px solid #FFFFFF;
     border-radius: 100vw;
-    padding: 10px 15px;
+    height: 100%;
+    padding: 0.2em 1em;
     width: max-content;
     > img { 
     width: 30px;
@@ -51,6 +56,7 @@ body {
       display: grid;
       grid-template-areas: "a a a a a b b b" "a a a a a c c c" "d d d d e c c c" "f f f f f f f f" "f f f f f f f f" "f f f f f f f f";
       width: 100%;
+
       > div {
         display: grid;
         place-items: center;
@@ -60,6 +66,7 @@ body {
         grid-area: a;
         background-color: #006CFF;
         border: 2.5px solid #000000;
+
 
         > div {
           display: flex;
@@ -76,6 +83,7 @@ body {
         }
       }
       #Meist {
+
         grid-area: b;
         background-color: #3188FF;
         ul {
@@ -88,6 +96,7 @@ body {
         }
       }
       #TALTECH {
+
         grid-area: d;
         background-color: #003F94;
         border: 2.5px solid #000000;
@@ -103,15 +112,20 @@ body {
           position: absolute;
           right: -3.125vw;
           bottom: -3.125vw;
-          width: 45%;
+          width: 50%;
           margin: 0;
         } 
       }
       #arrow {
         grid-area: e;
-        width: 100%;
+
+        aspect-ratio: 1;
+        img {
+          width: 100%;
+        }
       }
       #vota-uhendust {
+        width: 3fr;
         grid-area: c;
         display: grid;
         place-items: center;
@@ -134,20 +148,17 @@ body {
             transform: translateX(-100%);
             -webkit-transform: translateX(-100%);}
         }
-        > :nth-child(1) {
-          justify-content: left;
+        > div {
+          justify-content: space-between;
           align-content: space-between;
+        }
+        > :nth-child(1) {
           height: 100%;
           width: 40%;
-          text-align: left;
-          
-          
+          text-align: left;  
         }
         > :nth-child(2) {
-          justify-content: space-between;
-
           align-items: end;
-          align-content: space-between;
           height: 100%;
           text-align: right;
         }
@@ -157,13 +168,14 @@ body {
           white-space: nowrap; 
           overflow: hidden; 
           width: 20vw;
+          font-size: ;
           height: max-content !important;
         }
         span:hover {
           background-color: #3188FF;
         }
         span > h2 { 
-          animation: scrolling-left1 10s linear infinite;
+          animation: scrolling-left1 5s linear infinite;
 
         }
         div > h2 { 
@@ -211,4 +223,5 @@ body {
     }
 
   }
+
 }
