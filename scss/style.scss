@@ -311,13 +311,15 @@ body {
     }
     gap: 2.5px;
 
-    input {
+    input, textarea {
       padding: 1em;
       border-radius: 1em;
       background-color: #122949;
       border: 0.2vw solid #000000;
       font-weight: bold;
       font-size: 1.2em;
+      color: #98C4FF;
+
       
     }
     ::placeholder {

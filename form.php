@@ -17,3 +17,4 @@ $collection->insertOne([
   "message"=> $message
 ]);
 
+header('location: http://localhost:3000/index.php');

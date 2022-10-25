@@ -122,7 +122,7 @@
           <div class="grid">
             <input placeholder="Nimi" type="text" name="name" id="name" required>
             <input placeholder="E-mail" type="email" name="email" id="email" required>
-            <input placeholder="Sõnum" type="text" name="message" id="message" required>
+            <textarea type="text" name="message" id="message" required>Sõnum</textarea>
             <input type="submit" value="Saada">
           </div>
         </form>

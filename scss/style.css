@@ -327,13 +327,14 @@ body form .grid :nth-child(4) {
   background-color: #98C4FF;
   color: #122949;
 }
-body form .grid input {
+body form .grid input, body form .grid textarea {
   padding: 1em;
   border-radius: 1em;
   background-color: #122949;
   border: 0.2vw solid #000000;
   font-weight: bold;
   font-size: 1.2em;
+  color: #98C4FF;
 }
 body form .grid ::-moz-placeholder {
   color: #98C4FF;
