@@ -207,6 +207,21 @@ body {
       }
     }
   }
+  form .grid {
+    grid-template-areas: "n e s" "m m s";
+    :nth-child(1){
+      grid-area: n;
+    }
+    :nth-child(2){
+      grid-area: e;
+    }
+    :nth-child(3){
+      grid-area: m;
+    }
+    :nth-child(4){
+      grid-area: s;
+    }
+  }
   .flex {
     display: flex !important;
     flex-flow: row nowrap;
@@ -214,6 +229,9 @@ body {
   .flex-col {
     display: flex !important;
     flex-flow: column nowrap;
+  }
+  .grid {
+    display: grid;
   }
   footer {
     background-color: #000;

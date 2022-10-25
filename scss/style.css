@@ -219,6 +219,21 @@ body main .article .varvilineloik b:hover {
 body main .article > .flex-col {
   width: 40vw;
 }
+body form .grid {
+  grid-template-areas: "n e s" "m m s";
+}
+body form .grid :nth-child(1) {
+  grid-area: n;
+}
+body form .grid :nth-child(2) {
+  grid-area: e;
+}
+body form .grid :nth-child(3) {
+  grid-area: m;
+}
+body form .grid :nth-child(4) {
+  grid-area: s;
+}
 body .flex {
   display: flex !important;
   flex-flow: row nowrap;
@@ -226,6 +241,9 @@ body .flex {
 body .flex-col {
   display: flex !important;
   flex-flow: column nowrap;
+}
+body .grid {
+  display: grid;
 }
 body footer {
   background-color: #000;
