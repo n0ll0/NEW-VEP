@@ -183,6 +183,9 @@ body main #grid #meie-teema span {
   height: -moz-max-content !important;
   height: max-content !important;
 }
+body main #grid #meie-teema span h2 {
+  font-size: 2.25vw;
+}
 body main #grid #meie-teema span:hover {
   background-color: #3188FF;
 }

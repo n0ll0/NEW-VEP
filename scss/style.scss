@@ -168,7 +168,9 @@ body {
           white-space: nowrap; 
           overflow: hidden; 
           width: 20vw;
-          font-size: ;
+          h2 {
+            font-size: 2.25vw;
+          }
           height: max-content !important;
         }
         span:hover {
