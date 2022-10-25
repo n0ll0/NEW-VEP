@@ -188,24 +188,36 @@ body {
 
 
     }
-    .article {
-      justify-content: center;
-      align-items: center;
-      color: #98C4FF;
-      .varvilineloik {
-        width: min-content;
-        padding: 5vw;
-        gap: 0.2em;
-        line-height: 1;
-        b {transition: opacity 0.3s linear 0s; font-size: 1.1em;}
-        b:hover {
-          opacity: 0;
-        }
-      }
-      >.flex-col {
-        width: 40vw; 
-      }
+    #meiemeeskond {
     }
+    .article {
+      display: grid;
+      width: 80%;
+      place-items: center;
+      :nth-child(1) { grid-area: i; }
+      :nth-child(2) { grid-area: h; }
+      :nth-child(3) { grid-area: p; }
+      color: #006CFF;
+
+    }
+    .article:nth-child(even) {
+      grid-template-areas: "h i" "p i";
+    }
+    .article:nth-child(odd) {
+      grid-template-areas: "i h" "i p";
+    }
+    #Meisterlik {
+      grid-template-areas: "h i" "p i";
+      width: 80%;
+      h2, p {
+        color: #003F94;
+      }
+      img {
+        width: 100%;
+      }
+      margin: 1em auto;
+    }
+    
   }
   form .grid {
     grid-template-areas: "n e s" "m m s";
@@ -229,6 +241,7 @@ body {
   .flex-col {
     display: flex !important;
     flex-flow: column nowrap;
+    align-items: center;
   }
   .grid {
     display: grid;

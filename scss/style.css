@@ -197,27 +197,36 @@ body main #grid #meie-teema div > h2 {
   color: #98C4FF;
 }
 body main .article {
-  justify-content: center;
-  align-items: center;
-  color: #98C4FF;
+  display: grid;
+  width: 80%;
+  place-items: center;
+  color: #006CFF;
 }
-body main .article .varvilineloik {
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  padding: 5vw;
-  gap: 0.2em;
-  line-height: 1;
+body main .article :nth-child(1) {
+  grid-area: i;
 }
-body main .article .varvilineloik b {
-  transition: opacity 0.3s linear 0s;
-  font-size: 1.1em;
+body main .article :nth-child(2) {
+  grid-area: h;
 }
-body main .article .varvilineloik b:hover {
-  opacity: 0;
+body main .article :nth-child(3) {
+  grid-area: p;
 }
-body main .article > .flex-col {
-  width: 40vw;
+body main .article:nth-child(even) {
+  grid-template-areas: "h i" "p i";
+}
+body main .article:nth-child(odd) {
+  grid-template-areas: "i h" "i p";
+}
+body main #Meisterlik {
+  grid-template-areas: "h i" "p i";
+  width: 80%;
+  margin: 1em auto;
+}
+body main #Meisterlik h2, body main #Meisterlik p {
+  color: #003F94;
+}
+body main #Meisterlik img {
+  width: 100%;
 }
 body form .grid {
   grid-template-areas: "n e s" "m m s";
@@ -241,6 +250,7 @@ body .flex {
 body .flex-col {
   display: flex !important;
   flex-flow: column nowrap;
+  align-items: center;
 }
 body .grid {
   display: grid;
