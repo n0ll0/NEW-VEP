@@ -133,6 +133,6 @@
     <img src="src/LOGO.svg" alt="VEB">
     <a href="https://www.instagram.com/veb_of/" class="instagram flex normal"><img src="src/Instagram.svg" alt="">veb_of</a>
     <p class="copyright">Autoriõigused © 2022 VEB.<br> Kõik õigused kaitstud.</p>
-  </footer>
+  </footer> 
 </body>
 </html>
