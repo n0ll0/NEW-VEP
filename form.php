@@ -18,3 +18,5 @@ $collection->insertOne([
 ]);
 var_dump($_ENV, $_POST);
 header('location: http://'.$_SERVER['HTTP_HOST'] .'/index.php'); 
+
+?>

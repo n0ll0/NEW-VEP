@@ -1,4 +1,8 @@
 @import 'https://fonts.googleapis.com/css?family=Space Grotesk';
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -54,48 +58,117 @@ main .BR {
 main .UR {
   border-radius: 10vw 10vw 0 0;
 }
-main .background {
-  opacity: 0.5;
+main .BR, main .UR {
+  gap: 10vw;
 }
 main #grid {
   display: grid;
   grid-template-areas: "a a a a a b b b" "a a a a a c c c" "d d d d e c c c" "f f f f f f f f" "f f f f f f f f" "f f f f f f f f";
   width: 100%;
 }
-main #grid > div {
+main #grid > a, main #grid > div {
   display: grid;
   place-items: center;
   border-radius: 3.125vw;
+  overflow: hidden;
 }
 main #grid #telli-leht {
+  overflow: hidden;
+  transition: all 0.5s ease-out 0.1;
+  position: relative;
   grid-area: a;
   background-color: #006CFF;
-  border: 2.5px solid #000000;
+  border: 3px solid #000000;
+  padding: 0;
+}
+main #grid #telli-leht h2 {
+  color: #fff;
+  line-height: 1;
+  padding: 5vw 8.125vw;
+  margin: 0;
+  border-radius: 3.125vw;
+  border: 2.5px solid rgba(255, 255, 255, 0);
 }
 main #grid #telli-leht > div {
+  position: absolute;
+}
+main #grid #telli-leht > div :nth-child(1), main #grid #telli-leht > div :nth-child(2), main #grid #telli-leht > div :nth-child(3) {
+  opacity: 0.4;
+  transition: all 0.5s ease-out 0.1s;
+}
+main #grid #telli-leht > div :nth-child(1) {
+  transform: translate(14.6vw, 11vw) rotate(40deg) scale(5);
+}
+main #grid #telli-leht > div :nth-child(2) {
+  transform: translate(-32vw, 6vw) rotate(-20deg) scale(5);
+}
+main #grid #telli-leht > div :nth-child(3) {
+  transform: translate(3vw, -1vw) rotate(20deg) scale(5);
+}
+main #grid #telli-leht > div {
+  position: absolute;
   display: flex;
   flex-flow: row nowrap;
   gap: 0.5vw;
-  padding: 2px;
+  top: 22.5%;
+  right: 25%;
 }
-main #grid #telli-leht > div > div {
-  border-radius: 100vw;
-  width: 3vw;
-}
-main #grid #telli-leht > div > div img {
-  width: 100%;
+main #grid #telli-leht > div img {
+  border-radius: 100%;
+  width: 25px;
   aspect-ratio: 1;
-  z-index: 2;
+}
+main #grid #telli-leht:hover > div :nth-child(1), main #grid #telli-leht:hover > div :nth-child(2), main #grid #telli-leht:hover > div :nth-child(3) {
+  transform: unset;
+  opacity: 1;
+}
+main #grid #telli-leht:hover h2 {
+  border: 2.5px solid rgb(255, 255, 255);
 }
 main #grid #Meist {
   grid-area: b;
   background-color: #3188FF;
   color: #D3E6FF;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+main #grid #Meist h2 {
+  margin: 5.625vw auto;
+  font-size: 2vw;
 }
 main #grid #Meist ul {
+  position: absolute;
   display: flex;
   flex-flow: row nowrap;
   gap: 2vw;
+  left: 50%;
+}
+main #grid #Meist ul li {
+  margin: 0;
+  opacity: 0.3;
+  line-height: 0;
+}
+main #grid #Meist ul :nth-child(1), main #grid #Meist ul :nth-child(2), main #grid #Meist ul :nth-child(3), main #grid #Meist ul :nth-child(4), main #grid #Meist ul :nth-child(5) {
+  transition: all 0.3s ease-out;
+}
+main #grid #Meist ul :nth-child(1) {
+  transform: translate(30vw, -8vw) scale(25);
+}
+main #grid #Meist ul :nth-child(2) {
+  transform: translate(9vw, 5.5vw) scale(7.2);
+}
+main #grid #Meist ul :nth-child(3) {
+  transform: translate(-8vw, -5.2vw) scale(12);
+}
+main #grid #Meist ul :nth-child(4) {
+  transform: translate(-7vw, 4vw) scale(7);
+}
+main #grid #Meist ul :nth-child(5) {
+  transform: translate(23vw, 2vw) scale(20);
+}
+main #grid #Meist:hover ul :nth-child(1), main #grid #Meist:hover ul :nth-child(2), main #grid #Meist:hover ul :nth-child(3), main #grid #Meist:hover ul :nth-child(4), main #grid #Meist:hover ul :nth-child(5) {
+  transform: translate(-3.4vw, 4vw) scale(3);
 }
 main #grid #TALTECH {
   grid-area: d;
@@ -111,10 +184,11 @@ main #grid #TALTECH h2 {
 }
 main #grid #TALTECH .background {
   position: absolute;
-  right: 0;
-  bottom: auto;
-  width: 60%;
+  right: -2.5%;
+  bottom: -15%;
+  height: 100%;
   margin: 0;
+  padding: 0;
   opacity: 0;
   transition: opacity 0.3s linear 0s;
 }
@@ -127,28 +201,61 @@ main #grid #arrow {
   overflow: hidden;
   aspect-ratio: 1;
   background-color: #98C4FF;
+  color: #003F94;
 }
 main #grid #arrow h2 {
-  transform: translateY(-10px);
+  transform: scale(2);
   text-align: center;
   padding: auto;
-  transition: transform 0.5s ease-in-out 0s;
 }
 main #grid #arrow:hover h2 {
-  transform: translateY(30%);
+  -webkit-animation: arrowdown 1s infinite;
+          animation: arrowdown 1s infinite;
+}
+@-webkit-keyframes arrowdown {
+  0% {
+    transform: translateY(0) scale(2);
+  }
+  20% {
+    transform: translateY(200%) scale(1, 2.5);
+  }
+  20.0001% {
+    transform: translateY(-200%) scale(1, 2.5);
+  }
+  50% {
+    transform: translateY(0) scale(2);
+  }
+  100% {
+    transform: translateY(0) scale(2);
+  }
+}
+@keyframes arrowdown {
+  0% {
+    transform: translateY(0) scale(2);
+  }
+  20% {
+    transform: translateY(200%) scale(1, 2.5);
+  }
+  20.0001% {
+    transform: translateY(-200%) scale(1, 2.5);
+  }
+  50% {
+    transform: translateY(0) scale(2);
+  }
+  100% {
+    transform: translateY(0) scale(2);
+  }
 }
 main #grid #vota-uhendust {
-  width: 3fr;
   grid-area: c;
-  display: grid;
-  place-items: center;
   color: #003F94;
   background-color: #609CEB;
-  padding: auto auto;
-  gap: -2em;
 }
 main #grid #vota-uhendust h2 {
   font-size: 2.625vw;
+}
+main #grid #vota-uhendust :nth-child(3) {
+  transform: translate(-30px, -30px);
 }
 main #grid #meie-teema {
   grid-area: f;
@@ -243,14 +350,23 @@ main .article {
   -moz-column-gap: 2em;
        column-gap: 2em;
 }
+main .article:nth-child(even) {
+  grid-template-areas: "h i" "p i";
+}
+main .article:nth-child(odd) {
+  grid-template-areas: "i h" "i p";
+}
 main .article > :nth-child(1) {
   grid-area: i;
-  border-radius: 32px;
+  border-radius: 3.125vw;
   background-color: #006CFF;
   color: #fff;
   width: 20.75vw;
   height: 14.0625vw;
   place-self: center;
+}
+main .article:nth-child(4) > :nth-child(1) {
+  background: none;
 }
 main .article > :nth-child(2) {
   grid-area: h;
@@ -280,6 +396,7 @@ main .article #rahv b img {
 main .article img {
   width: 100%;
   border-radius: 32px;
+  background: none;
 }
 main .article #hoverIMG {
   background: url("../src/SEO.svg") no-repeat content-box center;
@@ -298,12 +415,6 @@ main .article b {
 }
 main .article b:hover {
   opacity: 0.001;
-}
-main .article:nth-child(even) {
-  grid-template-areas: "h i" "p i";
-}
-main .article:nth-child(odd) {
-  grid-template-areas: "i h" "i p";
 }
 main #Meisterlik {
   grid-template-areas: "h i" "p i";

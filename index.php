@@ -1,7 +1,3 @@
-<?php 
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,24 +10,26 @@
 </head>
 <body>
   <header>
-    <img src="src/header 1LOGO.svg" alt="VEB">
+    <a href=""><img src="src/header 1LOGO.svg" alt="VEB"></a>
   </header>
   <main>
     <div class="black flex-col BR">
       <div class="" id="grid">
         <!-- Telli leht -->
-        <div class="grid-child" id="telli-leht">
-          <h2>Telli leht</h2>
+
+        <a href="#form" id="telli-leht" class="grid-child">
+          <h2 class="border">Telli leht</h2>
           <div class="background">
-            <div class="border"></div>
-            <div class="line"><img src="src/lower.svg" alt="-"></div>
-            <div class="minimize"><img src="src/minimize.svg" alt="O"></div>
-            <div class="cross"><img src="src/close.svg" alt="X"></div>
+            <img src="src/lower tab.png" alt="-">
+            <img src="src/fullscreen.png" alt="O">
+            <img src="src/close tab.png" alt="X">
           </div>
-        </div>
+        </a>
+
 
         <!-- meist -->
-        <div class="grid-child" id="Meist">
+
+        <a href="#meiemeeskond" class="grid-child" id="Meist">
           <h2>Meist</h2>
           <ul class="background">
             <li id="dot1" class="dots"></li>
@@ -40,13 +38,14 @@
             <li id="dot4" class="dots"></li>
             <li id="dot5" class="dots"></li>
           </ul>
-        </div>
+        </a>
+
 
         <!-- oskuste pagas -->
-        <div id="TALTECH" class="grid-child">
+        <a id="TALTECH" class="grid-child">
           <h2>Oskuste pagas</h2>
           <img class="background" src="src/TALTECH.png" alt="TALTECH" />
-        </div>
+        </a>
 
         <!-- arrow -->
         <a id="arrow" href="#" class="arrow">
@@ -54,11 +53,13 @@
         </a>  
 
         <!-- võta ühendust -->
-        <div class="grid-child" id="vota-uhendust">
+
+        <a href="#form" class="grid-child " id="vota-uhendust">
           <h2>Võta ühendust</h2>
           <img src="src/mail.svg" alt="mail">
           <img src="src/phone.svg" alt="call">
-        </div>
+        </a>
+
 
         <!-- suurem asi -->
         <div id="meie-teema" class="grid-child flex">
@@ -118,7 +119,7 @@
         </h2>
         <p>Võta meiega ühendust!</p>
         
-        <form action="../form.php" method="post">
+        <form id="form" action="../form.php" method="post">
           <div class="grid">
             <input placeholder="Nimi" type="text" name="name" id="name" required>
             <input placeholder="E-mail" type="email" name="email" id="email" required>
@@ -130,8 +131,8 @@
     </div>
   </main>
   <footer class="flex">
-    <img src="src/LOGO.svg" alt="VEB">
-    <a href="https://www.instagram.com/veb_of/" class="instagram flex normal"><img src="src/Instagram.svg" alt="">veb_of</a>
+    <a href="#"><img src="src/LOGO.svg" alt="VEB"></a>
+    <a target="_blank" href="https://www.instagram.com/veb_of/" class="instagram flex normal"><img src="src/Instagram.svg" alt="">veb_of</a>
     <p class="copyright">Autoriõigused © 2022 VEB.<br> Kõik õigused kaitstud.</p>
   </footer> 
 </body>

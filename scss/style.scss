@@ -1,4 +1,9 @@
 @import 'https://fonts.googleapis.com/css?family=Space Grotesk';
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -41,62 +46,139 @@ main {
   h2 {
     font-size: 4vw;
   }
-  $R: 10vw;
-  $r: 1.875vw;
   .black {
     background-color: #000;
     padding: 3.5vw;
   }
   .BR {
-    border-radius: 0 0 $R $R;
+    border-radius: 0 0 10vw 10vw;
   }
   .UR {
-    border-radius: $R $R 0 0;
+    border-radius: 10vw 10vw 0 0;
   }
-  .background {
-    opacity: 0.5;
-  }
+  .BR, .UR {gap: 10vw;}
+  
   #grid {
     display: grid;
     grid-template-areas: "a a a a a b b b" "a a a a a c c c" "d d d d e c c c" "f f f f f f f f" "f f f f f f f f" "f f f f f f f f";
     width: 100%;
 
-    > div {
+    > a , > div{
       display: grid;
       place-items: center;
       border-radius: 3.125vw;
+      overflow: hidden;
     }
     #telli-leht {
+      overflow: hidden;
+      transition: all 0.5s ease-out 0.1;
+
+      position: relative;
       grid-area: a;
       background-color: #006CFF;
-      border: 2.5px solid #000000;
-
- 
+      border: 3px solid #000000;
+      padding: 0;
+      h2 {
+        color: #fff;
+        line-height: 1;
+        padding: 5vw 8.125vw;
+        margin: 0;
+        border-radius: 3.125vw;
+        border: 2.5px solid rgba(255, 255, 255, 0);
+      }
       > div {
+        position: absolute;
+        :nth-child(1), :nth-child(2), :nth-child(3) {
+          opacity: 0.4;
+          transition: all 0.5s ease-out 0.1s;
+
+        }
+        :nth-child(1) {
+          transform: translate(14.6vw, 11vw) rotate(40deg) scale(5);
+        }
+        :nth-child(2) {
+          transform: translate(-32vw, 6vw) rotate(-20deg) scale(5);
+        }
+        :nth-child(3) {
+          transform: translate(3vw, -1vw) rotate(20deg) scale(5);
+        }
+      }
+      > div {
+        position: absolute;
         display: flex;
         flex-flow: row nowrap;
         gap: 0.5vw;
-        padding: 2px;
-         > div {
-          border-radius: 100vw;
-          width: 3vw;
-          img {
-            width: 100%;
-            aspect-ratio: 1;
-            z-index: 2;
+        top: 22.5%;
+        right: 25%;
+        
+        img {
+          border-radius: 100%;
+          width: 25px;
+          aspect-ratio: 1;
+        }
+      }
+      
+      &:hover { 
+        >div {
+          :nth-child(1), :nth-child(2), :nth-child(3) {
+            transform: unset;
+            opacity: 1;
           }
         }
+        h2 {
+          border: 2.5px solid rgba(255, 255, 255, 1);
+          
+        }
+        
       }
     }
     #Meist {
-
       grid-area: b;
       background-color: #3188FF;
       color: #D3E6FF;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      h2 {
+        margin: 5.625vw auto;
+        font-size: 2vw;
+      }
       ul {
+        position: absolute;
         display: flex;
         flex-flow: row nowrap;
         gap: 2vw;
+        left: 50%;
+        li {
+          margin: 0;
+          opacity: 0.3;
+          line-height: 0;
+        }
+        
+        :nth-child(1), :nth-child(2), :nth-child(3), :nth-child(4), :nth-child(5) {
+          transition: all 0.3s ease-out;
+        }
+        :nth-child(1) {
+          transform: translate(30vw, -8vw) scale(25);
+        }
+        :nth-child(2) {
+          transform: translate(9vw, 5.5vw) scale(7.2);
+        }
+        :nth-child(3) {
+          transform: translate(-8vw, -5.2vw) scale(12);
+        }
+        :nth-child(4) {
+          transform: translate(-7vw, 4vw) scale(7);
+        }
+        :nth-child(5) {
+          transform: translate(23vw, 2vw) scale(20);
+        }
+      }
+      &:hover ul {
+        :nth-child(1), :nth-child(2), :nth-child(3), :nth-child(4), :nth-child(5) {
+          transform: translate(-3.4vw,4vw) scale(3);
+          
+        }
       }
     }
 
@@ -113,10 +195,11 @@ main {
       }
       .background {
         position: absolute;
-        right: 0;
-        bottom: auto;
-        width: 60%;
+        right: -2.5%;
+        bottom: -15%;
+        height: 100%;
         margin: 0;
+        padding: 0;
         opacity: 0;
         transition: opacity 0.3s linear 0s;
       } 
@@ -131,29 +214,49 @@ main {
       overflow: hidden;
       aspect-ratio: 1;
       background-color: #98C4FF;
+      color: #003F94;
       h2 {
-        transform: translateY(-10px);
+        
+        transform: scale(2);
         text-align: center;
         padding: auto;
-        transition: transform 0.5s ease-in-out 0s;
       }
       &:hover h2 {
-        transform: translateY(30%);
+        animation: arrowdown 1s infinite;
+        
+      }
+      @keyframes arrowdown {
+        0% {
+          transform: translateY(0) scale(2);
+        }
+        20% {
+          transform: translateY(200%) scale(1, 2.5);
+        }
+        20.0001% {
+          transform: translateY(-200%) scale(1, 2.5);
+        }
+        50% {
+          transform: translateY(0) scale(2);
+        }
+        100% {
+          transform: translateY(0) scale(2);
+        }
+
       }
     }
 
+    // Võta ühendust button
     #vota-uhendust {
-      width: 3fr;
       grid-area: c;
-      display: grid;
-      place-items: center;
       color: #003F94;
       background-color: #609CEB;
-      padding: auto auto;
       h2 {font-size: 2.625vw;}
-      gap: -2em;
+      :nth-child(3) {
+        transform: translate(-30px, -30px);
+      }
     }
 
+    // Meie teema suur asjandus
     #meie-teema {
       grid-area: f;
       padding: 5vw;
@@ -213,6 +316,8 @@ main {
       }
     }
   }
+
+  // Meie tiimist
   #meiemeeskond {
     img {
       width: 56.875vw;
@@ -226,21 +331,34 @@ main {
       opacity: 1;
     }
   }
+  
+  // vahepealne vahelduv informatsioon
   .article {
     display: grid;
     width: 80%;
     color: #fff;
-
+    
     column-gap: 2em;
+    &:nth-child(even) {
+      grid-template-areas: "h i" "p i";
+    }
+    &:nth-child(odd) {
+      grid-template-areas: "i h" "i p";
+    }
+    
+    // 1- on pilt 
+    // 2- on pealkiri
+    // 3- on paragraaf
     >:nth-child(1) { 
       grid-area: i; 
-      border-radius: 32px; 
+      border-radius: 3.125vw; 
       background-color:#006CFF; 
       color: #fff;
       width: 20.75vw;
       height: 14.0625vw;
       place-self: center;
     }
+    &:nth-child(4) > :nth-child(1) { background:none; }
     >:nth-child(2) { grid-area: h; }
     >:nth-child(3) { grid-area: p; }
     >:nth-child(2), :nth-child(3) { padding: 0; }
@@ -249,7 +367,6 @@ main {
       justify-content: center;
       align-items: center;
       text-align: center;
-      
     }
     #rahv {
       font-size: 1.5vw;
@@ -264,6 +381,7 @@ main {
     img { 
       width: 100%;
       border-radius: 32px;
+      background: none;
     }
     #hoverIMG { 
       background: url('../src/SEO.svg') no-repeat content-box center;
@@ -282,12 +400,8 @@ main {
       }
     }
   }
-  .article:nth-child(even) {
-    grid-template-areas: "h i" "p i";
-  }
-  .article:nth-child(odd) {
-    grid-template-areas: "i h" "i p";
-  }
+
+  // heledam ala
   #Meisterlik {
     grid-template-areas: "h i" "p i";
     width: 80%;
@@ -315,6 +429,8 @@ main {
   }
 }
 
+
+// formi osa
 form {
   width: 100%;
   .grid {
@@ -358,6 +474,7 @@ form {
   }
 }
 
+// vajalikud
 .flex {
   display: flex !important;
   flex-flow: row nowrap;
