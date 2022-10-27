@@ -1,7 +1,9 @@
 @import 'https://fonts.googleapis.com/css?family=Space Grotesk';
-
 html {
   scroll-behavior: smooth;
+}
+* {
+  transition: all 250ms ease-in-out;
 }
 
 body {
@@ -40,57 +42,62 @@ header {
     width: 39.375vw;
   }
 }
+h2 {
+  font-size: 4vw;
+}
+.black {
+  background-color: #000;
+  padding: 5vw 0.725vw;
+}
+.BR {
+  border-radius: 0 0 10vw 10vw;
+}
+.UR {
+  border-radius: 10vw 10vw 0 0;
+}
+.BR, .UR {gap: 10vw;}
 
 main {
   background-color: #609CEB;
-  h2 {
-    font-size: 4vw;
-  }
-  .black {
-    background-color: #000;
-    padding: 3.5vw;
-  }
-  .BR {
-    border-radius: 0 0 10vw 10vw;
-  }
-  .UR {
-    border-radius: 10vw 10vw 0 0;
-  }
-  .BR, .UR {gap: 10vw;}
   
   #grid {
     display: grid;
-    grid-template-areas: "a a a a a b b b" "a a a a a c c c" "d d d d e c c c" "f f f f f f f f" "f f f f f f f f" "f f f f f f f f";
+    grid-template-areas: 
+    "a a a a a b b b" 
+    "a a a a a c c c" 
+    "d d d d e c c c" 
+    "f f f f f f f f";
     width: 100%;
+    gap: 2px;
 
     > a , > div{
       display: grid;
       place-items: center;
       border-radius: 3.125vw;
       overflow: hidden;
+      border: 2px solid #000;
     }
+    // telli leht ******************************* *******************************
     #telli-leht {
       overflow: hidden;
-      transition: all 0.5s ease-out 0.1;
-
       position: relative;
       grid-area: a;
       background-color: #006CFF;
-      border: 3px solid #000000;
       padding: 0;
       h2 {
         color: #fff;
         line-height: 1;
-        padding: 5vw 8.125vw;
+        padding: 4vw 10%;
         margin: 0;
-        border-radius: 3.125vw;
+        border-radius: 10px;
         border: 2.5px solid rgba(255, 255, 255, 0);
       }
+      
       > div {
         position: absolute;
         :nth-child(1), :nth-child(2), :nth-child(3) {
           opacity: 0.4;
-          transition: all 0.5s ease-out 0.1s;
+          transition: all 0.5s cubic-bezier(.8,0,.2,1) 0.1s;
 
         }
         :nth-child(1) {
@@ -108,12 +115,12 @@ main {
         display: flex;
         flex-flow: row nowrap;
         gap: 0.5vw;
-        top: 22.5%;
-        right: 25%;
+        top: 20%;
+        right: 27.5%;
         
         img {
           border-radius: 100%;
-          width: 25px;
+          width: clamp(20px, 2vw, 25px);
           aspect-ratio: 1;
         }
       }
@@ -122,6 +129,8 @@ main {
         >div {
           :nth-child(1), :nth-child(2), :nth-child(3) {
             transform: unset;
+            // transform: translateY(-1vw);
+
             opacity: 1;
           }
         }
@@ -132,6 +141,7 @@ main {
         
       }
     }
+    // MEIST **************************************************************
     #Meist {
       grid-area: b;
       background-color: #3188FF;
@@ -155,9 +165,6 @@ main {
           line-height: 0;
         }
         
-        :nth-child(1), :nth-child(2), :nth-child(3), :nth-child(4), :nth-child(5) {
-          transition: all 0.3s ease-out;
-        }
         :nth-child(1) {
           transform: translate(30vw, -8vw) scale(25);
         }
@@ -181,7 +188,8 @@ main {
         }
       }
     }
-
+    
+    // TALTECH ************************************************************************
     #TALTECH {
       grid-area: d;
       background-color: #003F94;
@@ -195,21 +203,22 @@ main {
       }
       .background {
         position: absolute;
-        right: -2.5%;
-        bottom: -15%;
-        height: 100%;
+        right: 0;
+        bottom: 0;
+        height: 80%;
         margin: 0;
         padding: 0;
         opacity: 0;
-        transition: opacity 0.3s linear 0s;
+
       } 
       &:hover  .background {
         opacity: 0.3;
       }
     }
-
+    // nool ************************************************************************
     #arrow {
       grid-area: e;
+      font-weight: 200;
       border-radius: 100vw;
       overflow: hidden;
       aspect-ratio: 1;
@@ -245,30 +254,59 @@ main {
       }
     }
 
-    // Võta ühendust button
+    // Võta ühendust button **********************************************************
     #vota-uhendust {
       grid-area: c;
       color: #003F94;
       background-color: #609CEB;
       h2 {font-size: 2.625vw;}
+
+      :nth-child(2) {
+        transform: translate(15vw, -5vw) rotate(25deg) scale(2);
+        opacity: 0.5;
+      }
       :nth-child(3) {
-        transform: translate(-30px, -30px);
+        transform: translate(-11vw, -0.875vw) rotate(15deg) scale(2);
+        opacity: 0.5;
+      }
+      h2 {
+        transform: translateY(50px);
+      }
+      
+      &:hover {
+        h2 {
+          transform: unset;
+        }
+        :nth-child(2) {
+          transform: unset;
+          opacity: 1;
+        }
+        :nth-child(3) {
+          opacity: 1;
+          transform: unset;
+          transform: translate(-30px, -30px);
+        }
+
       }
     }
 
-    // Meie teema suur asjandus
+    // Meie teema suur asjandus ************************************************ *****
     #meie-teema {
       grid-area: f;
       padding: 5vw;
       background-color: #122949;
-      border: 2.5px solid #000000;
+      h2 {
+        font-size: 3.333333vw;
+        margin: 0;
+      }
+
       @keyframes scrolling-left1 {
-        0% {
+        from {
           transform: translateX(100%);
-          -webkit-transform: translateX(100%);}
-        100% {
-          transform: translateX(-120%);
-          -webkit-transform: translateX(-120%);}
+        }
+        to {
+          transform: translateX(-200%);
+        }
       }
       > div {
         justify-content: space-between;
@@ -276,13 +314,14 @@ main {
       }
       > :nth-child(1) {
         height: 100%;
-        width: 40%;
+        width: 55%;
         text-align: left;
         align-items:flex-start;
       }
       > :nth-child(2) {
         align-items: end;
         height: 100%;
+        width: 60%;
         text-align: right;
       }
       span {
@@ -290,7 +329,7 @@ main {
         border-radius: 100vw;
         white-space: nowrap; 
         overflow: hidden; 
-        width: 20vw;
+        width: 15vw;
         padding: 0.5em 1em;
         margin: 0;
         height: max-content !important;
@@ -298,7 +337,7 @@ main {
           font-size: 2.25vw;
           margin: 0;
         }
-        &:hover {
+        &:hover, &:focus {
           background-color: #3188FF;
         }
       }
@@ -316,36 +355,26 @@ main {
       }
     }
   }
-
-  // Meie tiimist
-  #meiemeeskond {
-    img {
-      width: 56.875vw;
-      height: auto;
-    }
-  }
-  b {
-    opacity: 0.001;
-    transition: opacity 0.5s linear 0s;
-    &:hover {
-      opacity: 1;
-    }
-  }
-  
-  // vahepealne vahelduv informatsioon
+  // vahepealne vahelduv informatsioon *****************************************************
   .article {
     display: grid;
-    width: 80%;
+    width: 60vw;
     color: #fff;
     
-    column-gap: 2em;
+    column-gap: 1em;
     &:nth-child(even) {
       grid-template-areas: "h i" "p i";
     }
     &:nth-child(odd) {
       grid-template-areas: "i h" "i p";
     }
-    
+    h2 {
+      margin: 0.05em 0;
+      font-size: 3.333333vw;
+    }
+    p {
+      font-size: 1.6666666666vw;
+    }
     // 1- on pilt 
     // 2- on pealkiri
     // 3- on paragraaf
@@ -357,6 +386,7 @@ main {
       width: 20.75vw;
       height: 14.0625vw;
       place-self: center;
+      font-size: 2vw;
     }
     &:nth-child(4) > :nth-child(1) { background:none; }
     >:nth-child(2) { grid-area: h; }
@@ -385,12 +415,13 @@ main {
     }
     #hoverIMG { 
       background: url('../src/SEO.svg') no-repeat content-box center;
-      object-fit: fill;
-      background-size: auto;
+      object-fit: contain;
+      background-size: 100%;
+
       &:hover {
         background: url('../src/s100.svg') no-repeat content-box center;
-        background-size: auto;
-        object-fit: fill;
+        background-size: 100%;
+        object-fit: contain;
       }
     }
     b { 
@@ -400,21 +431,28 @@ main {
       }
     }
   }
-
-  // heledam ala
-  #Meisterlik {
-    grid-template-areas: "h i" "p i";
+  // Meie tiimist************************************************************************
+  #meiemeeskond {
+    margin: 0;
     width: 80%;
+    img {
+      width: 50vw;
+      height: auto;
+    }
+  }
+  // heledam ala************************************************************************
+  #Meisterlik {
+    width: 75%;
+    grid-template-areas: "h i" "p i";
     h2, p {
       color: #003F94;
     }
     :nth-child(1) {
       background: none;
+      border-radius: 0;
     }
-    img {
-      width: 100%;
-    }
-    margin: 1em auto;
+
+    margin: 5vw auto;
   }
   
 }
@@ -426,13 +464,15 @@ main {
 
   h2 {
     width: 60%;
+    font-size: 5vw;
   }
 }
 
 
-// formi osa
+// formi osa************************************************************************
 form {
   width: 100%;
+  max-width: 800px;
   .grid {
     grid-template-areas: "n e s" "m m s";
     gap: 2.5px;
@@ -453,23 +493,20 @@ form {
 
     }
 
-    input, textarea {
+    textarea, input {
+      resize: vertical;
       padding: 1em;
       border-radius: 1em;
       background-color: #122949;
       border: 0.2vw solid #000000;
       font-weight: bold;
-      font-size: 1.2em;
-      color: #98C4FF;
-    }
-    textarea {
-      resize: vertical;
+      font-size: 1.25vw;
+      color: #98C4FF;      
     }
     ::placeholder {
-      color: #98C4FF;
-      font-size: 1.2em;
-      font-weight: bold;
 
+      font-size: 1em;
+      color: #98C4FF;
     }
   }
 }
@@ -484,6 +521,8 @@ form {
   display: flex !important;
   flex-flow: column nowrap;
   align-items: center;
+  justify-content: center;
+  gap: 0;
 }
 
 .grid {

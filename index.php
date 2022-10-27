@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="src/Geometric partLOGO.svg" type="image/icon type">
+  <link rel="icon" href="src/LOGO.svg" type="image/icon type">
   <title>VEB</title>
   <link rel="stylesheet" href="scss/style.css">
 </head>
 <body>
   <header>
-    <a href=""><img src="src/header 1LOGO.svg" alt="VEB"></a>
+    <a href="dev.php"><img src="src/header 1LOGO.svg" alt="VEB"></a>
   </header>
   <main>
     <div class="black flex-col BR">
@@ -20,9 +20,9 @@
         <a href="#form" id="telli-leht" class="grid-child">
           <h2 class="border">Telli leht</h2>
           <div class="background">
-            <img src="src/lower tab.png" alt="-">
-            <img src="src/fullscreen.png" alt="O">
-            <img src="src/close tab.png" alt="X">
+            <img src="src/lower tab.svg" alt="-">
+            <img src="src/fullscreen.svg" alt="O">
+            <img src="src/close tab.svg" alt="X">
           </div>
         </a>
 
@@ -119,7 +119,7 @@
         </h2>
         <p>Võta meiega ühendust!</p>
         
-        <form id="form" action="../form.php" method="post">
+        <form id="form" action="" method="post">
           <div class="grid">
             <input placeholder="Nimi" type="text" name="name" id="name" required>
             <input placeholder="E-mail" type="email" name="email" id="email" required>
@@ -127,6 +127,28 @@
             <input type="submit" value="Saada">
           </div>
         </form>
+        <?php
+        require_once __DIR__.'/vendor/autoload.php';
+        use Dotenv\Dotenv;
+        $dotenv = Dotenv::createImmutable(__DIR__);
+        if (isset($_POST["name"]) & isset($_POST["email"])) {
+          $dotenv->load();
+
+          $name = $_POST['name'];
+          $email = $_POST['email'];
+          $message = $_POST['message'];
+
+          $client = new MongoDB\Client($_ENV['MONGODB']);
+          $collection = $client->test->support;
+
+          $collection->insertOne([
+            "name"=> $name, 
+            "email"=> $email,
+            "message"=> $message
+          ]);
+          echo "<p>Well see into that soon :)</p>"; ;
+        }
+        ?>
       </div>
     </div>
   </main>
