@@ -4,13 +4,13 @@ html {
 }
 * {
   transition: all 250ms ease-in-out;
+  font-family: 'Space Grotesk';
 }
 
 body {
   margin: 0;
   display: flex;
   flex-flow: column nowrap;
-  font-family: 'Space Grotesk';
   font-style: normal;
 }
 
@@ -54,6 +54,7 @@ h2 {
 }
 .UR {
   border-radius: 10vw 10vw 0 0;
+  gap: 0 !important;
 }
 .BR, .UR {gap: 10vw;}
 
@@ -77,7 +78,7 @@ main {
       overflow: hidden;
       border: 2px solid #000;
     }
-    // telli leht ******************************* *******************************
+    // telli leht ******************************* ********************************************
     #telli-leht {
       overflow: hidden;
       position: relative;
@@ -87,7 +88,7 @@ main {
       h2 {
         color: #fff;
         line-height: 1;
-        padding: 4vw 10%;
+        padding: 3.66666vw 10%;
         margin: 0;
         border-radius: 10px;
         border: 2.5px solid rgba(255, 255, 255, 0);
@@ -431,15 +432,6 @@ main {
       }
     }
   }
-  // Meie tiimist************************************************************************
-  #meiemeeskond {
-    margin: 0;
-    width: 80%;
-    img {
-      width: 50vw;
-      height: auto;
-    }
-  }
   // heledam ala************************************************************************
   #Meisterlik {
     width: 75%;
@@ -454,7 +446,16 @@ main {
 
     margin: 5vw auto;
   }
-  
+  // Meie tiimist************************************************************************
+  #meiemeeskond {
+    margin: 0;
+    width: 80%;
+    img {
+      width: 50vw;
+      height: auto;
+    }
+  }
+
 }
 
 .center {
@@ -471,43 +472,70 @@ main {
 
 // formi osa************************************************************************
 form {
-  width: 100%;
-  max-width: 800px;
-  .grid {
-    grid-template-areas: "n e s" "m m s";
-    gap: 2.5px;
-    :nth-child(1){
-      grid-area: n;
+  width: 80%;
+}
+button.submit {
+  grid-area: s;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap; 
+  padding: 0;
+  padding: 2.875vw;
+  border-radius: 3.75vw;
+  border: 0.2vw solid #000000;
+  background-color: #98C4FF;      
+  overflow: hidden;
+  
+  p {
+    color: rgb(18, 41, 73); 
+    font-weight: bold;
+    font-size: 2vw;
+    transform: translateX(2vw);
+  }
+  img {
+    width: 100%;
+    transform: translateX(-20vw) scale(0.1);
+  }
+  &:hover { 
+    p {
+      transform: translateX(20vw); 
     }
-    :nth-child(2){
-      grid-area: e;
+    img {
+      transform: translateX(-2.5vw) scale(1); 
     }
-    :nth-child(3){
-      grid-area: m;
+  }
+}
+.grid {
+  grid-template-areas: "n e s" "m m s";
+  grid-template-columns: repeat(2, 2fr) 1fr;
+  gap: 2.5px;
+  input[type=text]{
+    grid-area: n;
+  }
+  input[type=email]{
+    grid-area: e;
+  }
+  textarea {
+    grid-area: m;
 
-    }
-    :nth-child(4){
-      grid-area: s;
-      background-color: #98C4FF;
-      color: #122949; 
+  }
+  textarea, input {
+    resize: vertical;
+    padding: 1.822916666vw;
+    border-radius: 3.75vw;
+    background-color: #122949;
+    border: 0.2vw solid #000000;
+    font-weight: bold;
+    font-size: 1.5vw;
+    color: #98C4FF;      
+    
+  }
+  ::placeholder {
+    color: #98C4FF;      
 
-    }
-
-    textarea, input {
-      resize: vertical;
-      padding: 1em;
-      border-radius: 1em;
-      background-color: #122949;
-      border: 0.2vw solid #000000;
-      font-weight: bold;
-      font-size: 1.25vw;
-      color: #98C4FF;      
-    }
-    ::placeholder {
-
-      font-size: 1em;
-      color: #98C4FF;
-    }
+    font-weight: bold;
   }
 }
 
@@ -522,7 +550,6 @@ form {
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
-  gap: 0;
 }
 
 .grid {
@@ -535,8 +562,16 @@ footer {
   padding: 2em;
   justify-content: space-between;
   align-items: center;
-  > img {
-    width: 40px;
+  font-size: 1.5vw;
+  img {
+    width: 4vw;
   }
+} 
+.instagram {
+  font-size: 2vw;
+  img {
+    width: 3vw !important;
+    aspect-ratio: 1;
+  } 
 
 }

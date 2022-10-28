@@ -5,13 +5,13 @@ html {
 
 * {
   transition: all 250ms ease-in-out;
+  font-family: "Space Grotesk";
 }
 
 body {
   margin: 0;
   display: flex;
   flex-flow: column nowrap;
-  font-family: "Space Grotesk";
   font-style: normal;
 }
 
@@ -61,6 +61,7 @@ h2 {
 
 .UR {
   border-radius: 10vw 10vw 0 0;
+  gap: 0 !important;
 }
 
 .BR, .UR {
@@ -93,7 +94,7 @@ main #grid #telli-leht {
 main #grid #telli-leht h2 {
   color: #fff;
   line-height: 1;
-  padding: 4vw 10%;
+  padding: 3.66666vw 10%;
   margin: 0;
   border-radius: 10px;
   border: 2.5px solid rgba(255, 255, 255, 0);
@@ -439,14 +440,6 @@ main .article b {
 main .article b:hover {
   opacity: 0.001;
 }
-main #meiemeeskond {
-  margin: 0;
-  width: 80%;
-}
-main #meiemeeskond img {
-  width: 50vw;
-  height: auto;
-}
 main #Meisterlik {
   width: 75%;
   grid-template-areas: "h i" "p i";
@@ -458,6 +451,14 @@ main #Meisterlik h2, main #Meisterlik p {
 main #Meisterlik :nth-child(1) {
   background: none;
   border-radius: 0;
+}
+main #meiemeeskond {
+  margin: 0;
+  width: 80%;
+}
+main #meiemeeskond img {
+  width: 50vw;
+  height: auto;
 }
 
 .center {
@@ -471,48 +472,75 @@ main #Meisterlik :nth-child(1) {
 }
 
 form {
-  width: 100%;
-  max-width: 800px;
+  width: 80%;
 }
-form .grid {
+
+button.submit {
+  grid-area: s;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+  padding: 0;
+  padding: 2.875vw;
+  border-radius: 3.75vw;
+  border: 0.2vw solid #000000;
+  background-color: #98C4FF;
+  overflow: hidden;
+}
+button.submit p {
+  color: rgb(18, 41, 73);
+  font-weight: bold;
+  font-size: 2vw;
+  transform: translateX(2vw);
+}
+button.submit img {
+  width: 100%;
+  transform: translateX(-20vw) scale(0.1);
+}
+button.submit:hover p {
+  transform: translateX(20vw);
+}
+button.submit:hover img {
+  transform: translateX(-2.5vw) scale(1);
+}
+
+.grid {
   grid-template-areas: "n e s" "m m s";
+  grid-template-columns: repeat(2, 2fr) 1fr;
   gap: 2.5px;
 }
-form .grid :nth-child(1) {
+.grid input[type=text] {
   grid-area: n;
 }
-form .grid :nth-child(2) {
+.grid input[type=email] {
   grid-area: e;
 }
-form .grid :nth-child(3) {
+.grid textarea {
   grid-area: m;
 }
-form .grid :nth-child(4) {
-  grid-area: s;
-  background-color: #98C4FF;
-  color: #122949;
-}
-form .grid textarea, form .grid input {
+.grid textarea, .grid input {
   resize: vertical;
-  padding: 1em;
-  border-radius: 1em;
+  padding: 1.822916666vw;
+  border-radius: 3.75vw;
   background-color: #122949;
   border: 0.2vw solid #000000;
   font-weight: bold;
-  font-size: 1.25vw;
+  font-size: 1.5vw;
   color: #98C4FF;
 }
-form .grid ::-moz-placeholder {
-  font-size: 1em;
+.grid ::-moz-placeholder {
   color: #98C4FF;
+  font-weight: bold;
 }
-form .grid :-ms-input-placeholder {
-  font-size: 1em;
+.grid :-ms-input-placeholder {
   color: #98C4FF;
+  font-weight: bold;
 }
-form .grid ::placeholder {
-  font-size: 1em;
+.grid ::placeholder {
   color: #98C4FF;
+  font-weight: bold;
 }
 
 .flex {
@@ -525,7 +553,6 @@ form .grid ::placeholder {
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
-  gap: 0;
 }
 
 .grid {
@@ -538,7 +565,16 @@ footer {
   padding: 2em;
   justify-content: space-between;
   align-items: center;
+  font-size: 1.5vw;
 }
-footer > img {
-  width: 40px;
+footer img {
+  width: 4vw;
+}
+
+.instagram {
+  font-size: 2vw;
+}
+.instagram img {
+  width: 3vw !important;
+  aspect-ratio: 1;
 }/*# sourceMappingURL=style.css.map */

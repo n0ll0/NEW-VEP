@@ -110,7 +110,7 @@
         <h2>Meie meeskond</h2>
         <p>Oleme tehnikale pühendunud noored. Lõime VEBi, märgates, et üha rohkematel Eesti ettevõtetel on aegunud lehed või lausa polegi lehte. Oleme siin selleks, et sinu ettevõte ei teeks sama viga.</p>
       </div>
-
+      <a target="_blank" href="https://www.instagram.com/veb_of/" class="instagram flex normal"><img src="src/Instagram.svg" alt="">veb_of</a>
       <div class="center flex-col">
         <h2>
           Kas Sul on küsimus,
@@ -123,10 +123,10 @@
           <div class="grid">
             <input placeholder="Nimi" type="text" name="name" id="name" required>
             <input placeholder="E-mail" type="email" name="email" id="email" required>
-            <textarea type="text" name="message" id="message" required>Sõnum</textarea>
-            <input type="submit" value="Saada">
-          </div>
-        </form>
+            <textarea rows="10" type="text" name="message" id="message" required>Sõnum</textarea>
+            <button class="submit" type="submit" form="form" value="Saada"><p>Saada</p><img src="src/saada.svg"></button>
+          </form>
+        </div>
         <?php
         require_once __DIR__.'/vendor/autoload.php';
         use Dotenv\Dotenv;
