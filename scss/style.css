@@ -94,7 +94,7 @@ main #grid #telli-leht {
 main #grid #telli-leht h2 {
   color: #fff;
   line-height: 1;
-  padding: 3.66666vw 10%;
+  padding: 3.6666666vw 10%;
   margin: 0;
   border-radius: 10px;
   border: 2.5px solid rgba(255, 255, 255, 0);
@@ -120,12 +120,13 @@ main #grid #telli-leht > div {
   display: flex;
   flex-flow: row nowrap;
   gap: 0.5vw;
-  top: 20%;
+  top: calc(4rem - 1.5vw);
   right: 27.5%;
 }
 main #grid #telli-leht > div img {
   border-radius: 100%;
-  width: clamp(20px, 2vw, 25px);
+  width: 1.985vw;
+  max-width: 25px;
   aspect-ratio: 1;
 }
 main #grid #telli-leht:hover > div :nth-child(1), main #grid #telli-leht:hover > div :nth-child(2), main #grid #telli-leht:hover > div :nth-child(3) {

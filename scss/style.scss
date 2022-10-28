@@ -88,7 +88,7 @@ main {
       h2 {
         color: #fff;
         line-height: 1;
-        padding: 3.66666vw 10%;
+        padding: 3.6666666vw 10%;
         margin: 0;
         border-radius: 10px;
         border: 2.5px solid rgba(255, 255, 255, 0);
@@ -116,18 +116,20 @@ main {
         display: flex;
         flex-flow: row nowrap;
         gap: 0.5vw;
-        top: 20%;
+        top: calc(4rem - 1.5vw);
         right: 27.5%;
         
         img {
           border-radius: 100%;
-          width: clamp(20px, 2vw, 25px);
+          width: 1.985vw;
+          max-width: 25px;
           aspect-ratio: 1;
         }
       }
       
       &:hover { 
         >div {
+          // transform: translateY(0.5vw);
           :nth-child(1), :nth-child(2), :nth-child(3) {
             transform: unset;
             // transform: translateY(-1vw);
@@ -137,7 +139,6 @@ main {
         }
         h2 {
           border: 2.5px solid rgba(255, 255, 255, 1);
-          
         }
         
       }
