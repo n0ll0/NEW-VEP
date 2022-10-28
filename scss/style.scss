@@ -5,6 +5,7 @@ html {
 * {
   transition: all 250ms ease-in-out;
   font-family: 'Space Grotesk';
+  letter-spacing: -0.04em;
 }
 
 body {
@@ -12,6 +13,8 @@ body {
   display: flex;
   flex-flow: column nowrap;
   font-style: normal;
+  background-color: #000;
+  
 }
 
 a {
@@ -51,6 +54,9 @@ h2 {
 }
 .BR {
   border-radius: 0 0 10vw 10vw;
+  >.flex-col {
+    gap: 5vw;
+  }
 }
 .UR {
   border-radius: 10vw 10vw 0 0;
@@ -88,7 +94,7 @@ main {
       h2 {
         color: #fff;
         line-height: 1;
-        padding: 3.6666666vw 10%;
+        padding: 3.6666666vw 11%;
         margin: 0;
         border-radius: 10px;
         border: 2.5px solid rgba(255, 255, 255, 0);
@@ -241,10 +247,10 @@ main {
           transform: translateY(0) scale(2);
         }
         20% {
-          transform: translateY(200%) scale(1, 2.5);
+          transform: translateY(200%) scale(0.5, 3);
         }
         20.0001% {
-          transform: translateY(-200%) scale(1, 2.5);
+          transform: translateY(-200%) scale(0.7, 3);
         }
         50% {
           transform: translateY(0) scale(2);
@@ -395,7 +401,7 @@ main {
     >:nth-child(3) { grid-area: p; }
     >:nth-child(2), :nth-child(3) { padding: 0; }
     #unik, #rahv {
-      padding: auto;
+
       justify-content: center;
       align-items: center;
       text-align: center;
@@ -426,12 +432,17 @@ main {
         object-fit: contain;
       }
     }
-    b { 
-      opacity: 1; 
-      &:hover { 
-        opacity: 0.001; 
+    #rahv:hover {
+      b {
+        transform: rotate(180deg);
       }
     }
+    #unik:hover {
+      b { 
+        opacity: 0.001; 
+      }  
+    }
+    
   }
   // heledam ala************************************************************************
   #Meisterlik {
@@ -443,6 +454,8 @@ main {
     :nth-child(1) {
       background: none;
       border-radius: 0;
+      width: initial;
+      height: initial;
     }
 
     margin: 5vw auto;
@@ -450,9 +463,15 @@ main {
   // Meie tiimist************************************************************************
   #meiemeeskond {
     margin: 0;
-    width: 80%;
+    width: 90%;
+    h2 {
+      font-size: 5vw;
+    }
+    p {
+      font-size: 2.5vw;
+    }
     img {
-      width: 50vw;
+      width: 40vw;
       height: auto;
     }
   }

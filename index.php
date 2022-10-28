@@ -91,7 +91,7 @@
           <p>Meie lehed on optimeeritud kõrge SEO skoori jaoks, et sinu leht jõuaks klientideni esimesena.</p>
         </div>
         <div class="article">
-          <img src="src/neeger.svg" alt="neeger">
+          <img src="src/support.svg" alt="support">
           <h2>Sinu jaoks olemas</h2>
           <p>Meie kliendina oled sa alati meie esimene prioriteet, saad meiega ühendust võtta iga päev, hommikust õhtuni.</p>
         </div>

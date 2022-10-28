@@ -21,18 +21,27 @@ $cursor = $collection->find();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VEB dev</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="scss/style.css">
+    <style>
+      * {text-align: center;color: #fff;}
+      body>div {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+      }
+    </style>
   </head>
   <body>
-  <a href="index.php">Back</a>
-  <?php foreach ($cursor as $document) { ?>
-    
-    <h3><?= $document["name"] ; ?></h3>
-    <h4><?= $document["email"] ; ?></h4>
-    <p><?= $document["message"] ; ?></p>
+    <a href="index.php">Back</a>
+    <div>
+    <?php foreach ($cursor as $document) { ?>
+      <div>
+        <h3><?= $document["name"] ; ?></h3>
+        <h4><?= $document["email"] ; ?></h4>
+        <p><?= $document["message"] ; ?></p>
+      </div>
 
-
-  <?php } ?>
-
+    <?php } ?>
+    </div>
 </body>
 </html>

@@ -6,6 +6,7 @@ html {
 * {
   transition: all 250ms ease-in-out;
   font-family: "Space Grotesk";
+  letter-spacing: -0.04em;
 }
 
 body {
@@ -13,6 +14,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   font-style: normal;
+  background-color: #000;
 }
 
 a {
@@ -58,6 +60,9 @@ h2 {
 .BR {
   border-radius: 0 0 10vw 10vw;
 }
+.BR > .flex-col {
+  gap: 5vw;
+}
 
 .UR {
   border-radius: 10vw 10vw 0 0;
@@ -94,7 +99,7 @@ main #grid #telli-leht {
 main #grid #telli-leht h2 {
   color: #fff;
   line-height: 1;
-  padding: 3.6666666vw 10%;
+  padding: 3.6666666vw 11%;
   margin: 0;
   border-radius: 10px;
   border: 2.5px solid rgba(255, 255, 255, 0);
@@ -225,10 +230,10 @@ main #grid #arrow:hover h2 {
     transform: translateY(0) scale(2);
   }
   20% {
-    transform: translateY(200%) scale(1, 2.5);
+    transform: translateY(200%) scale(0.5, 3);
   }
   20.0001% {
-    transform: translateY(-200%) scale(1, 2.5);
+    transform: translateY(-200%) scale(0.7, 3);
   }
   50% {
     transform: translateY(0) scale(2);
@@ -242,10 +247,10 @@ main #grid #arrow:hover h2 {
     transform: translateY(0) scale(2);
   }
   20% {
-    transform: translateY(200%) scale(1, 2.5);
+    transform: translateY(200%) scale(0.5, 3);
   }
   20.0001% {
-    transform: translateY(-200%) scale(1, 2.5);
+    transform: translateY(-200%) scale(0.7, 3);
   }
   50% {
     transform: translateY(0) scale(2);
@@ -403,7 +408,6 @@ main .article > :nth-child(2), main .article :nth-child(3) {
   padding: 0;
 }
 main .article #unik, main .article #rahv {
-  padding: auto;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -435,10 +439,10 @@ main .article #hoverIMG:hover {
   -o-object-fit: contain;
      object-fit: contain;
 }
-main .article b {
-  opacity: 1;
+main .article #rahv:hover b {
+  transform: rotate(180deg);
 }
-main .article b:hover {
+main .article #unik:hover b {
   opacity: 0.001;
 }
 main #Meisterlik {
@@ -452,13 +456,21 @@ main #Meisterlik h2, main #Meisterlik p {
 main #Meisterlik :nth-child(1) {
   background: none;
   border-radius: 0;
+  width: initial;
+  height: initial;
 }
 main #meiemeeskond {
   margin: 0;
-  width: 80%;
+  width: 90%;
+}
+main #meiemeeskond h2 {
+  font-size: 5vw;
+}
+main #meiemeeskond p {
+  font-size: 2.5vw;
 }
 main #meiemeeskond img {
-  width: 50vw;
+  width: 40vw;
   height: auto;
 }
 
