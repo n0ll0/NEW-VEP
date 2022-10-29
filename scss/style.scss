@@ -14,26 +14,9 @@ body {
   flex-flow: column nowrap;
   font-style: normal;
   background-color: #000;
-  
+  gap: 0;
 }
 
-a {
-  text-decoration: none;
-  color: #fff;
-  &.normal {
-    display: grid;
-    place-items: center;
-    gap: 1em;
-    border: 2px solid #FFFFFF;
-    border-radius: 100vw;
-    height: 100%;
-    padding: 0.2em 1em;
-    width: max-content;
-    > img { 
-    width: 30px;
-    }
-  } 
-}
 
 header {
   background-color: #000;
@@ -44,6 +27,20 @@ header {
   img {
     width: 39.375vw;
   }
+}
+a {
+  text-decoration: none;
+  color: #fff;
+  &.normal {
+    display: grid;
+    place-items: center;
+    gap: 0.5em;
+    border: 2px solid #FFFFFF;
+    border-radius: 100vw;
+    height: 100%;
+    padding: 0.2em 1em;
+    width: max-content;
+  } 
 }
 h2 {
   font-size: 4vw;
@@ -70,12 +67,14 @@ main {
   #grid {
     display: grid;
     grid-template-areas: 
-    "a a a a a b b b" 
-    "a a a a a c c c" 
-    "d d d d e c c c" 
-    "f f f f f f f f";
+    "a a a a a b b b b" 
+    "a a a a a c c c c" 
+    "d d d d e c c c c" 
+    "f f f f f f f f f";
     width: 100%;
     gap: 2px;
+    grid-template-columns: repeat(3,1fr) 0.5fr 1fr 2.5fr;
+    grid-template-rows: 1.1fr 0.4fr 1fr 2fr;
 
     > a , > div{
       display: grid;
@@ -94,7 +93,7 @@ main {
       h2 {
         color: #fff;
         line-height: 1;
-        padding: 3.6666666vw 11%;
+        padding: 10% 13%;
         margin: 0;
         border-radius: 10px;
         border: 2.5px solid rgba(255, 255, 255, 0);
@@ -108,10 +107,10 @@ main {
 
         }
         :nth-child(1) {
-          transform: translate(14.6vw, 11vw) rotate(40deg) scale(5);
+          transform: translate(16vw, 12vw) rotate(40deg) scale(7);
         }
         :nth-child(2) {
-          transform: translate(-32vw, 6vw) rotate(-20deg) scale(5);
+          transform: translate(-35vw, 8vw) rotate(-20deg) scale(7);
         }
         :nth-child(3) {
           transform: translate(3vw, -1vw) rotate(20deg) scale(5);
@@ -122,14 +121,12 @@ main {
         display: flex;
         flex-flow: row nowrap;
         gap: 0.5vw;
-        top: calc(4rem - 1.5vw);
-        right: 27.5%;
+        top: 12.45%;
+        right: 27%;
         
         img {
           border-radius: 100%;
           width: 1.985vw;
-          max-width: 25px;
-          aspect-ratio: 1;
         }
       }
       
@@ -138,8 +135,6 @@ main {
           // transform: translateY(0.5vw);
           :nth-child(1), :nth-child(2), :nth-child(3) {
             transform: unset;
-            // transform: translateY(-1vw);
-
             opacity: 1;
           }
         }
@@ -229,15 +224,14 @@ main {
       font-weight: 200;
       border-radius: 100vw;
       overflow: hidden;
-      aspect-ratio: 1;
       background-color: #98C4FF;
       color: #003F94;
+      aspect-ratio: 1;
       h2 {
-        
         transform: scale(2);
         text-align: center;
-        padding: auto;
       }
+
       &:hover h2 {
         animation: arrowdown 1s infinite;
         
@@ -267,18 +261,19 @@ main {
       grid-area: c;
       color: #003F94;
       background-color: #609CEB;
+
       h2 {font-size: 2.625vw;}
 
       :nth-child(2) {
-        transform: translate(15vw, -5vw) rotate(25deg) scale(2);
+        transform: translate(15vw, -5vw) rotate(25deg) scale(3);
         opacity: 0.5;
       }
       :nth-child(3) {
-        transform: translate(-11vw, -0.875vw) rotate(15deg) scale(2);
+        transform: translate(-11vw, -0.875vw) rotate(15deg) scale(3);
         opacity: 0.5;
       }
       h2 {
-        transform: translateY(50px);
+        transform: translateY(100%);
       }
       
       &:hover {
@@ -287,12 +282,13 @@ main {
         }
         :nth-child(2) {
           transform: unset;
+          transform: scale(2);
           opacity: 1;
         }
         :nth-child(3) {
           opacity: 1;
           transform: unset;
-          transform: translate(-30px, -30px);
+          transform: scale(2) translate(-50%, -40%);
         }
 
       }
@@ -368,14 +364,15 @@ main {
     display: grid;
     width: 60vw;
     color: #fff;
-    
     column-gap: 1em;
+
     &:nth-child(even) {
       grid-template-areas: "h i" "p i";
     }
     &:nth-child(odd) {
-      grid-template-areas: "i h" "i p";
+      grid-template-areas: "i h" "i p";  
     }
+    
     h2 {
       margin: 0.05em 0;
       font-size: 3.333333vw;
@@ -433,7 +430,7 @@ main {
       }
     }
     #rahv:hover {
-      b {
+      b img {
         transform: rotate(180deg);
       }
     }
@@ -444,6 +441,29 @@ main {
     }
     
   }
+
+  nightmare {
+    
+    @keyframes come-right {
+      from {
+        transform: translateX(200%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+    @keyframes come-left {
+      from {
+        transform: translateX(-200%);
+      }
+
+      to {
+        transform: translateX(0);
+      }
+
+    }
+  }
+
   // heledam ala************************************************************************
   #Meisterlik {
     width: 75%;
@@ -588,10 +608,30 @@ footer {
   }
 } 
 .instagram {
-  font-size: 2vw;
+  &.left {
+    align-self: flex-start;
+    margin-left: 5%;
+  }
+  font-size: 1.25vw;
+  &, b {
+    letter-spacing: 0.05em !important;
+    font-weight: normal !important;
+  }
   img {
-    width: 3vw !important;
+    width: 1.48958333333vw !important;
     aspect-ratio: 1;
   } 
+  
+  &:hover {
+    
+    b {
+      display: none;
+    }
+    &::after {
+      content: "Instagram";
+    }  
+  }
+}
+@media screen and (max-width: 768px) {
 
 }

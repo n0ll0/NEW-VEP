@@ -15,26 +15,7 @@ body {
   flex-flow: column nowrap;
   font-style: normal;
   background-color: #000;
-}
-
-a {
-  text-decoration: none;
-  color: #fff;
-}
-a.normal {
-  display: grid;
-  place-items: center;
-  gap: 1em;
-  border: 2px solid #FFFFFF;
-  border-radius: 100vw;
-  height: 100%;
-  padding: 0.2em 1em;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-}
-a.normal > img {
-  width: 30px;
+  gap: 0;
 }
 
 header {
@@ -46,6 +27,23 @@ header {
 }
 header img {
   width: 39.375vw;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a.normal {
+  display: grid;
+  place-items: center;
+  gap: 0.5em;
+  border: 2px solid #FFFFFF;
+  border-radius: 100vw;
+  height: 100%;
+  padding: 0.2em 1em;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 h2 {
@@ -78,9 +76,11 @@ main {
 }
 main #grid {
   display: grid;
-  grid-template-areas: "a a a a a b b b" "a a a a a c c c" "d d d d e c c c" "f f f f f f f f";
+  grid-template-areas: "a a a a a b b b b" "a a a a a c c c c" "d d d d e c c c c" "f f f f f f f f f";
   width: 100%;
   gap: 2px;
+  grid-template-columns: repeat(3, 1fr) 0.5fr 1fr 2.5fr;
+  grid-template-rows: 1.1fr 0.4fr 1fr 2fr;
 }
 main #grid > a, main #grid > div {
   display: grid;
@@ -99,7 +99,7 @@ main #grid #telli-leht {
 main #grid #telli-leht h2 {
   color: #fff;
   line-height: 1;
-  padding: 3.6666666vw 11%;
+  padding: 10% 13%;
   margin: 0;
   border-radius: 10px;
   border: 2.5px solid rgba(255, 255, 255, 0);
@@ -112,10 +112,10 @@ main #grid #telli-leht > div :nth-child(1), main #grid #telli-leht > div :nth-ch
   transition: all 0.5s cubic-bezier(0.8, 0, 0.2, 1) 0.1s;
 }
 main #grid #telli-leht > div :nth-child(1) {
-  transform: translate(14.6vw, 11vw) rotate(40deg) scale(5);
+  transform: translate(16vw, 12vw) rotate(40deg) scale(7);
 }
 main #grid #telli-leht > div :nth-child(2) {
-  transform: translate(-32vw, 6vw) rotate(-20deg) scale(5);
+  transform: translate(-35vw, 8vw) rotate(-20deg) scale(7);
 }
 main #grid #telli-leht > div :nth-child(3) {
   transform: translate(3vw, -1vw) rotate(20deg) scale(5);
@@ -125,14 +125,12 @@ main #grid #telli-leht > div {
   display: flex;
   flex-flow: row nowrap;
   gap: 0.5vw;
-  top: calc(4rem - 1.5vw);
-  right: 27.5%;
+  top: 12.45%;
+  right: 27%;
 }
 main #grid #telli-leht > div img {
   border-radius: 100%;
   width: 1.985vw;
-  max-width: 25px;
-  aspect-ratio: 1;
 }
 main #grid #telli-leht:hover > div :nth-child(1), main #grid #telli-leht:hover > div :nth-child(2), main #grid #telli-leht:hover > div :nth-child(3) {
   transform: unset;
@@ -212,14 +210,13 @@ main #grid #arrow {
   font-weight: 200;
   border-radius: 100vw;
   overflow: hidden;
-  aspect-ratio: 1;
   background-color: #98C4FF;
   color: #003F94;
+  aspect-ratio: 1;
 }
 main #grid #arrow h2 {
   transform: scale(2);
   text-align: center;
-  padding: auto;
 }
 main #grid #arrow:hover h2 {
   -webkit-animation: arrowdown 1s infinite;
@@ -268,27 +265,28 @@ main #grid #vota-uhendust h2 {
   font-size: 2.625vw;
 }
 main #grid #vota-uhendust :nth-child(2) {
-  transform: translate(15vw, -5vw) rotate(25deg) scale(2);
+  transform: translate(15vw, -5vw) rotate(25deg) scale(3);
   opacity: 0.5;
 }
 main #grid #vota-uhendust :nth-child(3) {
-  transform: translate(-11vw, -0.875vw) rotate(15deg) scale(2);
+  transform: translate(-11vw, -0.875vw) rotate(15deg) scale(3);
   opacity: 0.5;
 }
 main #grid #vota-uhendust h2 {
-  transform: translateY(50px);
+  transform: translateY(100%);
 }
 main #grid #vota-uhendust:hover h2 {
   transform: unset;
 }
 main #grid #vota-uhendust:hover :nth-child(2) {
   transform: unset;
+  transform: scale(2);
   opacity: 1;
 }
 main #grid #vota-uhendust:hover :nth-child(3) {
   opacity: 1;
   transform: unset;
-  transform: translate(-30px, -30px);
+  transform: scale(2) translate(-50%, -40%);
 }
 main #grid #meie-teema {
   grid-area: f;
@@ -439,11 +437,43 @@ main .article #hoverIMG:hover {
   -o-object-fit: contain;
      object-fit: contain;
 }
-main .article #rahv:hover b {
+main .article #rahv:hover b img {
   transform: rotate(180deg);
 }
 main .article #unik:hover b {
   opacity: 0.001;
+}
+@-webkit-keyframes come-right {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes come-right {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes come-left {
+  from {
+    transform: translateX(-200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes come-left {
+  from {
+    transform: translateX(-200%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 main #Meisterlik {
   width: 75%;
@@ -585,9 +615,23 @@ footer img {
 }
 
 .instagram {
-  font-size: 2vw;
+  font-size: 1.25vw;
+}
+.instagram.left {
+  align-self: flex-start;
+  margin-left: 5%;
+}
+.instagram, .instagram b {
+  letter-spacing: 0.05em !important;
+  font-weight: normal !important;
 }
 .instagram img {
-  width: 3vw !important;
+  width: 1.4895833333vw !important;
   aspect-ratio: 1;
+}
+.instagram:hover b {
+  display: none;
+}
+.instagram:hover::after {
+  content: "Instagram";
 }/*# sourceMappingURL=style.css.map */
