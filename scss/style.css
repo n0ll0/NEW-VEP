@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import 'https://fonts.googleapis.com/css?family=Space Grotesk';
 html {
   scroll-behavior: smooth;
@@ -132,8 +133,8 @@ main #grid #telli-leht > div img {
   border-radius: 100%;
   width: 1.985vw;
 }
-main #grid #telli-leht:hover > div :nth-child(1), main #grid #telli-leht:hover > div :nth-child(2), main #grid #telli-leht:hover > div :nth-child(3) {
-  transform: unset;
+main #grid #telli-leht:hover > div img {
+  transform: unset !important;
   opacity: 1;
 }
 main #grid #telli-leht:hover h2 {
@@ -179,7 +180,7 @@ main #grid #Meist ul :nth-child(5) {
   transform: translate(23vw, 2vw) scale(20);
 }
 main #grid #Meist:hover ul :nth-child(1), main #grid #Meist:hover ul :nth-child(2), main #grid #Meist:hover ul :nth-child(3), main #grid #Meist:hover ul :nth-child(4), main #grid #Meist:hover ul :nth-child(5) {
-  transform: translate(-3.4vw, 4vw) scale(3);
+  transform: translate(-3.4vw, 4vw) scale(3) !important;
 }
 main #grid #TALTECH {
   grid-area: d;
@@ -203,7 +204,7 @@ main #grid #TALTECH .background {
   opacity: 0;
 }
 main #grid #TALTECH:hover .background {
-  opacity: 0.3;
+  opacity: 0.3 !important;
 }
 main #grid #arrow {
   grid-area: e;
@@ -212,7 +213,6 @@ main #grid #arrow {
   overflow: hidden;
   background-color: #98C4FF;
   color: #003F94;
-  aspect-ratio: 1;
 }
 main #grid #arrow h2 {
   transform: scale(2);
@@ -443,38 +443,6 @@ main .article #rahv:hover b img {
 main .article #unik:hover b {
   opacity: 0.001;
 }
-@-webkit-keyframes come-right {
-  from {
-    transform: translateX(200%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-@keyframes come-right {
-  from {
-    transform: translateX(200%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-@-webkit-keyframes come-left {
-  from {
-    transform: translateX(-200%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-@keyframes come-left {
-  from {
-    transform: translateX(-200%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
 main #Meisterlik {
   width: 75%;
   grid-template-areas: "h i" "p i";
@@ -634,4 +602,77 @@ footer img {
 }
 .instagram:hover::after {
   content: "Instagram";
+}
+
+@media screen and (max-width: 768px) {
+  #grid {
+    grid-template-areas: "a a" "d d" "b c" "b e" "f f" !important;
+    grid-template-columns: 0.81034fr 1.189655172fr !important;
+    grid-template-rows: 0.9fr 0.7fr 1fr 0.5fr 1.5fr !important;
+  }
+  #grid h2 {
+    font-size: 4vw !important;
+  }
+  #telli-leht h2 {
+    font-size: 8.6vw !important;
+    padding: 7% 11% !important;
+  }
+  #telli-leht > div {
+    right: 20% !important;
+    top: 17% !important;
+  }
+  #telli-leht img {
+    width: 19% !important;
+  }
+  #telli-leht img:nth-child(1) {
+    transform: translate(35vw, 20vw) scale(6) rotate(27deg) !important;
+  }
+  #telli-leht img:nth-child(2) {
+    transform: translate(-51vw, 8vw) rotate(-20deg) scale(7) !important;
+  }
+  #TALTECH h2 {
+    font-size: 4vw !important;
+  }
+  #Meist h2 {
+    font-size: 4vw !important;
+  }
+  #Meist ul {
+    gap: 1.5em !important;
+    transform: translate(-10%);
+  }
+  #vota-uhendust:hover :nth-child(3) {
+    transform: translate(-110%, -20%) scale(2) !important;
+  }
+  #meie-teema {
+    flex-flow: column nowrap;
+  }
+  #meie-teema > div {
+    display: block !important;
+    width: 100% !important;
+  }
+  #meie-teema > div > h2 {
+    font-size: 5vw !important;
+    white-space: nowrap;
+  }
+  #meie-teema span h2 {
+    font-size: clamp(18px, 2vw, 24px) !important;
+  }
+  #meie-teema span:nth-child(1) {
+    transform: rotate(90deg) translate(20%, 50%);
+    float: left;
+  }
+  #meie-teema span:nth-child(2) {
+    float: right;
+    transform: translateY(-100%);
+  }
+  #Meisterlik img {
+    width: 32.575vw !important;
+  }
+  footer p {
+    display: none;
+  }
+  footer img::after {
+    content: "Autoriõigused © 2022 VEB.<br> Kõik õigused kaitstud.";
+    color: #fff;
+  }
 }/*# sourceMappingURL=style.css.map */

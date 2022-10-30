@@ -132,9 +132,8 @@ main {
       
       &:hover { 
         >div {
-          // transform: translateY(0.5vw);
-          :nth-child(1), :nth-child(2), :nth-child(3) {
-            transform: unset;
+          img {
+            transform: unset !important;
             opacity: 1;
           }
         }
@@ -186,7 +185,7 @@ main {
       }
       &:hover ul {
         :nth-child(1), :nth-child(2), :nth-child(3), :nth-child(4), :nth-child(5) {
-          transform: translate(-3.4vw,4vw) scale(3);
+          transform: translate(-3.4vw,4vw) scale(3) !important;
           
         }
       }
@@ -215,7 +214,7 @@ main {
 
       } 
       &:hover  .background {
-        opacity: 0.3;
+        opacity: 0.3 !important;
       }
     }
     // nool ************************************************************************
@@ -226,7 +225,7 @@ main {
       overflow: hidden;
       background-color: #98C4FF;
       color: #003F94;
-      aspect-ratio: 1;
+
       h2 {
         transform: scale(2);
         text-align: center;
@@ -442,28 +441,6 @@ main {
     
   }
 
-  nightmare {
-    
-    @keyframes come-right {
-      from {
-        transform: translateX(200%);
-      }
-      to {
-        transform: translateX(0);
-      }
-    }
-    @keyframes come-left {
-      from {
-        transform: translateX(-200%);
-      }
-
-      to {
-        transform: translateX(0);
-      }
-
-    }
-  }
-
   // heledam ala************************************************************************
   #Meisterlik {
     width: 75%;
@@ -633,5 +610,79 @@ footer {
   }
 }
 @media screen and (max-width: 768px) {
-
+  #grid {
+    grid-template-areas: "a a" "d d" "b c" "b e" "f f" !important;
+    grid-template-columns: 0.81034fr 1.189655172fr !important;
+    grid-template-rows: 0.9fr 0.7fr 1fr 0.5fr 1.5fr !important;
+    h2 {
+      font-size: 4vw !important;
+    }
+  }
+  #telli-leht {
+    h2 {
+      font-size: 8.6vw !important;
+      padding: 7% 11% !important;
+    }
+    >div {
+      right: 20% !important;
+      top: 17% !important;
+    }
+    img {
+      width: 19% !important;
+      &:nth-child(1) {transform: translate(35vw, 20vw) scale(6) rotate(27deg) !important;}
+      &:nth-child(2) {transform: translate(-51vw, 8vw) rotate(-20deg) scale(7) !important;}
+    }
+  }
+  #TALTECH {
+    h2 {
+      font-size: 4vw !important;
+    }
+  }
+  #Meist {
+    h2 {font-size: 4vw !important;}
+    ul {
+      gap: 1.5em !important;
+      transform: translate(-10%);
+    }
+  }
+  #vota-uhendust:hover :nth-child(3) {
+    transform: translate(-110%, -20%) scale(2) !important;
+  }
+  #meie-teema {
+    flex-flow: column nowrap;
+    >div {
+      display: block !important;
+      width: 100% !important;
+      
+      >h2 {
+        font-size: 5vw !important;
+        white-space: nowrap;
+      }
+    }
+    span {
+      h2 {
+        font-size: clamp(18px, 2vw, 24px) !important;
+      }
+      &:nth-child(1){
+        transform: rotate(90deg) translate(20%, 50%);
+        float: left;
+      }
+      &:nth-child(2) {
+        float: right;
+        transform: translateY(-100%);
+      }
+    }
+  }
+  #Meisterlik {
+    img {
+      width: 32.575vw !important;
+    }
+  }
+  footer {
+    p {display: none;}
+    img::after {
+      content: "Autoriõigused © 2022 VEB.<br> Kõik õigused kaitstud.";
+      color: #fff;
+    }
+  }
 }
