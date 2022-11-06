@@ -28,8 +28,32 @@ header {
   margin: 0;
   color: #fff;
 }
+header .empty {
+  width: 10vw;
+}
 header img {
   width: 39.375vw;
+}
+header form {
+  padding: 0.8em;
+  margin: 0;
+}
+header form [type=radio] {
+  position: absolute;
+  opacity: 0;
+}
+header form label {
+  color: #888;
+}
+header form > div {
+  cursor: pointer;
+}
+header form .selected {
+  align-items: center;
+  justify-content: center;
+}
+header form .selected label {
+  color: #fff;
 }
 
 a {
@@ -297,21 +321,24 @@ main #grid #meie-teema {
 main #grid #meie-teema h2 {
   font-size: 3.333333vw;
   margin: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 @-webkit-keyframes scrolling-left1 {
   from {
-    transform: translateX(100%);
+    transform: translateX(120%);
   }
   to {
-    transform: translateX(-200%);
+    transform: translateX(-120%);
   }
 }
 @keyframes scrolling-left1 {
   from {
-    transform: translateX(100%);
+    transform: translateX(120%);
   }
   to {
-    transform: translateX(-200%);
+    transform: translateX(-120%);
   }
 }
 main #grid #meie-teema > div {
@@ -758,29 +785,46 @@ footer #veb-logo p {
     width: 90%;
   }
   .grid ::-moz-placeholder {
-    font-size: 3.333vw;
+    font-size: 4vw;
+    padding: 1rem initial;
   }
   .grid :-ms-input-placeholder {
-    font-size: 3.333vw;
+    font-size: 4vw;
+    padding: 1rem initial;
   }
   .grid ::placeholder, .grid button, .grid input, .grid textarea {
-    font-size: 3.333vw;
+    font-size: 4vw;
+    padding: 1rem initial;
+  }
+  .grid textarea {
+    padding: 1rem 1.5rem;
   }
   .grid > button {
     height: 17vw !important;
   }
   .grid > button p {
     font-size: 3vw !important;
+    margin: 1rem;
+    transform: unset !important;
   }
   .grid > button img {
-    height: 50vw !important;
+    height: 50% !important;
     width: initial !important;
+    transform: unset !important;
   }
   .instagram {
+    margin: 0.5rem;
     font-size: 3vw !important;
   }
   .instagram img {
     width: 5vw !important;
+  }
+  #end h2 {
+    font-size: 10vw !important;
+    width: 100% !important;
+  }
+  #end p {
+    font-size: 4vw !important;
   }
   footer p {
     display: none;

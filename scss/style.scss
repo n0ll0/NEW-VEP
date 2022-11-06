@@ -27,8 +27,33 @@ header {
   align-items: center;
   margin: 0;
   color: #fff;
+  .empty {
+    width: 10vw;
+
+  }
   img {
     width: 39.375vw;
+  }
+  form {
+    padding: 0.8em;
+    margin: 0;
+    [type=radio] {
+      position: absolute;
+      opacity: 0;
+    }
+    label {
+      color: #888;
+    }
+    > div {
+      cursor: pointer;
+    }
+    .selected {
+      align-items: center;
+      justify-content: center;
+      label {
+        color: #fff;
+      }
+    }
   }
 }
 a {
@@ -291,14 +316,15 @@ main {
       h2 {
         font-size: 3.333333vw;
         margin: 0;
+        width: max-content;
       }
 
       @keyframes scrolling-left1 {
         from {
-          transform: translateX(100%);
+          transform: translateX(120%);
         }
         to {
-          transform: translateX(-200%);
+          transform: translateX(-120%);
         }
       }
       > div {
@@ -688,7 +714,7 @@ footer {
       height: initial !important;
     }
   }
-
+  
   .grid {
     grid-template-areas: "n e" "m m" "s s";
     grid-template-columns: repeat(2, 1fr);
@@ -698,26 +724,37 @@ footer {
       width: 90%;
     }
     ::placeholder, button, input, textarea {
-      font-size: 3.333vw;
+      font-size: 4vw;
+      padding: 1rem initial;
     }
+    textarea {padding: 1rem 1.5rem;}
     > {
       button {
         height: 17vw !important;
         p {
           font-size: 3vw !important;
+          margin: 1rem;
+          transform: unset !important;
         }
         img {
-          height: 50vw !important;
-          width: initial !important;;
+          height: 50% !important;
+          width: initial !important;
+          transform: unset !important;
         }
       }
     }
   }
   .instagram {
+    margin: 0.5rem;
     font-size: 3vw !important; 
     img {
       width: 5vw !important;
     }
+  }
+  #end {
+    h2 {font-size: 10vw !important; width:100% !important;}
+    p {font-size: 4vw !important;}
+
   }
   footer {
     p {display: none;}
