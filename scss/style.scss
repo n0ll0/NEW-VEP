@@ -15,13 +15,16 @@ body {
   font-style: normal;
   background-color: #000;
   gap: 0;
+  overflow-x: hidden; 
 }
 
 
 header {
   background-color: #000;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
   margin: 0;
   color: #fff;
   img {
@@ -186,7 +189,6 @@ main {
       &:hover ul {
         :nth-child(1), :nth-child(2), :nth-child(3), :nth-child(4), :nth-child(5) {
           transform: translate(-3.4vw,4vw) scale(3) !important;
-          
         }
       }
     }
@@ -200,9 +202,7 @@ main {
       color: #98C4FF;
       padding: auto auto;
       overflow: hidden;
-      h2 {
-        font-size: 2vw ;
-      }
+      h2 {font-size: 2vw ;}
       .background {
         position: absolute;
         right: 0;
@@ -213,9 +213,7 @@ main {
         opacity: 0;
 
       } 
-      &:hover  .background {
-        opacity: 0.3 !important;
-      }
+      &:hover  .background {opacity: 0.3 !important;}
     }
     // nool ************************************************************************
     #arrow {
@@ -225,16 +223,14 @@ main {
       overflow: hidden;
       background-color: #98C4FF;
       color: #003F94;
-
       h2 {
         transform: scale(2);
         text-align: center;
       }
-
       &:hover h2 {
         animation: arrowdown 1s infinite;
-        
       }
+
       @keyframes arrowdown {
         0% {
           transform: translateY(0) scale(2);
@@ -260,9 +256,7 @@ main {
       grid-area: c;
       color: #003F94;
       background-color: #609CEB;
-
       h2 {font-size: 2.625vw;}
-
       :nth-child(2) {
         transform: translate(15vw, -5vw) rotate(25deg) scale(3);
         opacity: 0.5;
@@ -272,22 +266,18 @@ main {
         opacity: 0.5;
       }
       h2 {
-        transform: translateY(100%);
+        transform: translateY(150%);
       }
-      
       &:hover {
-        h2 {
-          transform: unset;
-        }
+        h2 {transform: unset;}
         :nth-child(2) {
           transform: unset;
-          transform: scale(2);
           opacity: 1;
         }
         :nth-child(3) {
           opacity: 1;
           transform: unset;
-          transform: scale(2) translate(-50%, -40%);
+          transform: translate(-50%, -40%);
         }
 
       }
@@ -340,9 +330,7 @@ main {
           font-size: 2.25vw;
           margin: 0;
         }
-        &:hover, &:focus {
-          background-color: #3188FF;
-        }
+        &:hover, &:focus {background-color: #3188FF;}
       }
       span > h2 { 
         animation: scrolling-left1 5s linear infinite;
@@ -365,20 +353,14 @@ main {
     color: #fff;
     column-gap: 1em;
 
-    &:nth-child(even) {
-      grid-template-areas: "h i" "p i";
-    }
-    &:nth-child(odd) {
-      grid-template-areas: "i h" "i p";  
-    }
+    &:nth-child(even) {grid-template-areas: "h i" "p i";}
+    &:nth-child(odd) {grid-template-areas: "i h" "i p";  }
     
     h2 {
       margin: 0.05em 0;
       font-size: 3.333333vw;
     }
-    p {
-      font-size: 1.6666666666vw;
-    }
+    p {font-size: 1.6666666666vw;}
     // 1- on pilt 
     // 2- on pealkiri
     // 3- on paragraaf
@@ -407,9 +389,7 @@ main {
       b { 
         aspect-ratio: 1;
         width: 33%;
-        img {
-          width: 100%;
-        }
+        img {width: 100%;}
       }
     }
     img { 
@@ -429,14 +409,10 @@ main {
       }
     }
     #rahv:hover {
-      b img {
-        transform: rotate(180deg);
-      }
+      b img {transform: rotate(180deg);}
     }
     #unik:hover {
-      b { 
-        opacity: 0.001; 
-      }  
+      b { opacity: 0.001;}  
     }
     
   }
@@ -444,10 +420,8 @@ main {
   // heledam ala************************************************************************
   #Meisterlik {
     width: 75%;
-    grid-template-areas: "h i" "p i";
-    h2, p {
-      color: #003F94;
-    }
+    grid-template-areas: "h i" "p i" !important;
+    h2, p {color: #003F94;}
     :nth-child(1) {
       background: none;
       border-radius: 0;
@@ -461,12 +435,8 @@ main {
   #meiemeeskond {
     margin: 0;
     width: 90%;
-    h2 {
-      font-size: 5vw;
-    }
-    p {
-      font-size: 2.5vw;
-    }
+    h2 {font-size: 5vw;}
+    p {font-size: 2.5vw;}
     img {
       width: 40vw;
       height: auto;
@@ -479,10 +449,14 @@ main {
   color: #fff;
   text-align: center;
   width: 100%;
-
   h2 {
     width: 60%;
     font-size: 5vw;
+    margin-bottom: 0.1rem;
+  }
+  p {
+    margin: 1rem 0 0.5rem 0;
+    font-size: 2.1vw;
   }
 }
 
@@ -516,28 +490,17 @@ button.submit {
     transform: translateX(-20vw) scale(0.1);
   }
   &:hover { 
-    p {
-      transform: translateX(20vw); 
-    }
-    img {
-      transform: translateX(-2.5vw) scale(1); 
-    }
+    p {transform: translateX(20vw); }
+    img {transform: translateX(-2.5vw) scale(1);}
   }
 }
 .grid {
   grid-template-areas: "n e s" "m m s";
   grid-template-columns: repeat(2, 2fr) 1fr;
   gap: 2.5px;
-  input[type=text]{
-    grid-area: n;
-  }
-  input[type=email]{
-    grid-area: e;
-  }
-  textarea {
-    grid-area: m;
-
-  }
+  input[type=text]{grid-area: n;}
+  input[type=email]{grid-area: e;}
+  textarea {grid-area: m;}
   textarea, input {
     resize: vertical;
     padding: 1.822916666vw;
@@ -546,12 +509,10 @@ button.submit {
     border: 0.2vw solid #000000;
     font-weight: bold;
     font-size: 1.5vw;
-    color: #98C4FF;      
-    
+    color: #98C4FF;
   }
   ::placeholder {
     color: #98C4FF;      
-
     font-weight: bold;
   }
 }
@@ -583,27 +544,28 @@ footer {
   img {
     width: 4vw;
   }
+  #veb-logo {
+    p {
+      font-size: 1.5vw;
+      display: none;
+    }
+  }
 } 
 .instagram {
   &.left {
     align-self: flex-start;
     margin-left: 5%;
   }
-  font-size: 1.25vw;
-  &, b {
-    letter-spacing: 0.05em !important;
-    font-weight: normal !important;
-  }
   img {
     width: 1.48958333333vw !important;
     aspect-ratio: 1;
   } 
-  
+  &::after {
+    letter-spacing: 0.05em !important;
+    font-weight: normal !important;
+    content: "veb_of";
+  }  
   &:hover {
-    
-    b {
-      display: none;
-    }
     &::after {
       content: "Instagram";
     }  
@@ -614,10 +576,8 @@ footer {
     grid-template-areas: "a a" "d d" "b c" "b e" "f f" !important;
     grid-template-columns: 0.81034fr 1.189655172fr !important;
     grid-template-rows: 0.9fr 0.7fr 1fr 0.5fr 1.5fr !important;
-    h2 {
-      font-size: 4vw !important;
-    }
   }
+  h2 {font-size: 4vw !important;}
   #telli-leht {
     h2 {
       font-size: 8.6vw !important;
@@ -633,36 +593,56 @@ footer {
       &:nth-child(2) {transform: translate(-51vw, 8vw) rotate(-20deg) scale(7) !important;}
     }
   }
-  #TALTECH {
-    h2 {
-      font-size: 4vw !important;
-    }
-  }
+
   #Meist {
-    h2 {font-size: 4vw !important;}
+    display: flex !important;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      margin: 0 !important;
+    }
     ul {
-      gap: 1.5em !important;
-      transform: translate(-10%);
+      
+      position: relative !important;
+      width: 100%;
+      display: flex !important;
+      flex-flow: row nowrap !important;
+      justify-content: center !important;
+      gap: 1.2em !important;	
+      transform: unset !important;
+      :nth-child(2) {transform: translate(5vw, 10vw) scale(6) !important;}
+      :nth-child(3) {transform: translate(-5vw, 13vw) scale(8) !important;}
+      :nth-child(4) {transform: translate(40vw, -15vw) scale(15) !important;}
+      :nth-child(5) {transform: translate(-1vw, -14vw) scale(10) !important;}
+    }
+    &:hover ul {
+      transform: translate(-10vw, 4vw) !important;
     }
   }
-  #vota-uhendust:hover :nth-child(3) {
-    transform: translate(-110%, -20%) scale(2) !important;
+  #vota-uhendust {
+    img {
+      width: 10vw;
+    }
+    &:hover {
+      img {transform: scale(1) !important;}
+      :nth-child(3) {
+        transform: translate(-50%, -50%) !important;
+      }
+    }
   }
   #meie-teema {
     flex-flow: column nowrap;
     >div {
       display: block !important;
       width: 100% !important;
-      
       >h2 {
         font-size: 5vw !important;
         white-space: nowrap;
       }
     }
     span {
-      h2 {
-        font-size: clamp(18px, 2vw, 24px) !important;
-      }
+      h2 {font-size: clamp(18px, 2vw, 24px) !important;}
       &:nth-child(1){
         transform: rotate(90deg) translate(20%, 50%);
         float: left;
@@ -673,16 +653,83 @@ footer {
       }
     }
   }
+  .article {
+    grid-template-areas: "i" "h" "p" !important;
+    grid-template-columns: 1fr;
+    gap: 0.5em;
+    h2, p {text-align: center; margin: 0 !important;}
+    >:nth-child(1) {
+      width: 100% !important;
+      height: 40vw !important;
+      font-size: 5vw !important;
+    }
+    h2 {font-size: 5vw !important; margin-top: 0.4em !important;}
+    p {font-size: 4vw !important;}
+  }
   #Meisterlik {
+    column-gap: 2rem !important;
     img {
-      width: 32.575vw !important;
+      width: 25vw !important;
+      height: initial !important;
+    }
+    p, h2 {text-align: left !important;}
+    h2 {font-size:  4vw !important; margin-top: 0 !important;}
+    p {font-size: 3.5vw !important;}
+  }
+  #meiemeeskond {
+    h2 , p {
+      text-align: left !important;
+    }
+    p {
+      opacity: 0.7;
+    }
+    img {
+      width: 100% !important;
+      height: initial !important;
+    }
+  }
+
+  .grid {
+    grid-template-areas: "n e" "m m" "s s";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 0.3fr 1.5fr 0.4fr;
+    width: 100% !important;
+    >:nth-child(1), >:nth-child(2) {
+      width: 90%;
+    }
+    ::placeholder, button, input, textarea {
+      font-size: 3.333vw;
+    }
+    > {
+      button {
+        height: 17vw !important;
+        p {
+          font-size: 3vw !important;
+        }
+        img {
+          height: 50vw !important;
+          width: initial !important;;
+        }
+      }
+    }
+  }
+  .instagram {
+    font-size: 3vw !important; 
+    img {
+      width: 5vw !important;
     }
   }
   footer {
     p {display: none;}
-    img::after {
-      content: "Autoriõigused © 2022 VEB.<br> Kõik õigused kaitstud.";
-      color: #fff;
+    #veb-logo {
+      display: flex;
+      align-items: center;
+      p {
+        padding: 0.5em;
+        font-size: 2.333vw;
+        display: block;
+      }
+      
     }
   }
 }
